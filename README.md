@@ -1,2 +1,2 @@
-# latex-basics
- Dicas básicas para gerar documentos em LaTeX
+# Dicas básicas para LaTeX
+Repositório criado para manter arquivos com dicas básicas para utilização do LaTeX. 
