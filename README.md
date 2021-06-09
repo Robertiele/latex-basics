@@ -7,6 +7,8 @@ Repositório criado para manter arquivos com dicas básicas para utilização do
 - [ ] Utilização do Visual Studio no Ubuntu 20.04.
 - [ ] Grandes classes do LaTeX.
 - [ ] Explicação da estrutura do documento.
+- [ ] Edição de texto.
+- [ ] Alinhamento de texto.
 - [ ] Inserir imagens.
 - [ ] Inserir tabelas.
 - [ ] Inserir códigos.
