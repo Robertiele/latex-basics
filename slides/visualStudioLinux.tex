@@ -1,0 +1,85 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{caption}
+% \usepackage{hyperref}
+\hypersetup{
+    final=true,
+    % bookmarks=true,
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Introdução ao \LaTeX com o Visual Studio Code no Ubuntu},    % title
+    pdfauthor={Nightwind},     % author
+    pdfsubject={Introdução ao Visual Studio Code no Ubuntu},   % subject of the document
+    % pdfcreator={Creator},   % creator of the document
+    % pdfproducer={Producer}, % producer of the document
+    pdfkeywords={latex, dicas}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=cyan,         % color of file links
+    urlcolor=magenta        % color of external links
+}
+\usepackage[style=abnt]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}
+
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset
+{breakatwhitespace=true,breaklines=true,language=bash,basicstyle=\small\ttfamily,flexiblecolumns,backgroundcolor=\color{white}}
+\usepackage{menukeys}
+
+\title{Utilizando o Visual Studio Code no Ubuntu}
+\author{Nightwind}
+\institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
+\logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents
+\end{frame}
+
+\section{Instalação do Visual Studio Code}
+
+\begin{frame}[fragile]
+    \frametitle{Instalação do Visual Studio Code}
+    \begin{itemize}
+        \item Abrir o terminal do Ubuntu: \keys{\ctrlwin + \Altwin + T }
+    \end{itemize}
+    \begin{lstlisting}
+        $ sudo snap install --classic code # or code-insiders
+    \end{lstlisting}
+\end{frame}
+
+
+\section{Instalação dos Requisitos}
+\begin{frame}[fragile]
+    \frametitle{Instalação dos Requisitos}
+    \begin{lstlisting}
+        $ sudo apt install texlive-full
+    \end{lstlisting}
+\end{frame}
+
+\section{Referências}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Referências}
+    \nocite{TeXLiveUbuntu,VisualStudioCodeUbuntu}
+    \printbibliography[]
+\end{frame}
+
+\end{document}

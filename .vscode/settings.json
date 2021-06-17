@@ -1,8 +1,13 @@
 {
     "cSpell.words": [
         "Nightwind",
+        "backgroundcolor",
+        "basicstyle",
+        "breakatwhitespace",
+        "breaklines",
         "citecolor",
         "filecolor",
+        "flexiblecolumns",
         "linkbordercolor",
         "linkcolor",
         "pdfauthor",
@@ -12,6 +17,7 @@
         "pdfproducer",
         "pdfsubject",
         "pdftitle",
+        "texlive",
         "urlcolor"
     ]
 }

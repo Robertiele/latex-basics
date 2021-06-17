@@ -35,13 +35,7 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \lstset
-{
-    language=TeX,
-    breaklines=true,
-    basicstyle=\tt\scriptsize,
-    keywordstyle=\color{blue},
-    identifierstyle=\color{magenta},
-}
+{breakatwhitespace=true,breaklines=true,language=[LaTeX]TeX,basicstyle=\small\ttfamily,flexiblecolumns,backgroundcolor=\color{white}}
 
 \title{Utilizando o Visual Studio Code no Windows}
 \author{Nightwind}
@@ -220,7 +214,7 @@
     \caption{TeXLive.}
     \label{fig:texlive}
     \includegraphics[width=0.8\textheight]{../images/texlive.png}
-    \caption*{\footnotesize Ir no \href{https://www.tug.org/texlive/acquire-netinstall.html}{Site oficial} e clicar no texto destacado \href{https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe}{\underline{install-tl-windows.exe}}.}
+    \caption*{\footnotesize Ir no \href{https://www.tug.org/texlive/acquire-netinstall.html}{Site oficial} e clicar no texto destacado \href{https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe}{\underline{install-tl-windows.exe}}.} 
 \end{figure}
 \end{frame}
 
@@ -272,11 +266,12 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Referências}
-    \nocite{*}
-    \printbibliography
+\section{Referências}
 
+\begin{frame}[allowframebreaks]
+    \frametitle{Referências}
+    \nocite{LaTeXWorkshop,TeXLiveHomePage,VisualStudioCode}
+    \printbibliography[]
 \end{frame}
 
 \end{document}
