@@ -2,7 +2,7 @@
     a4paper,
     12pt,
     addpoints,
-    answers
+    % answers
 ]{exam}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -123,6 +123,27 @@
                     \subsubpart[3] (\fillin[F][0.5cm]) sétima sentença. 
                 \end{subsubparts}
             \end{subparts}
+        \end{parts}
+
+        \question Questões de múltipla escolha:
+        \begin{parts}
+            \part[3] Onde vende água?
+            \begin{choices}
+                \choice Farmácia.
+                \choice Mercado.
+                \CorrectChoice Mercearia.
+                \choice Restaurante.
+            \end{choices}
+
+            \part[3] Onde vende água?
+
+            \begin{oneparchoices}
+                \choice Farmácia.
+                \choice Mercado.
+                \CorrectChoice Mercearia.
+                \choice Restaurante.
+            \end{oneparchoices}
+
         \end{parts}
     \end{questions}
 \end{document}
