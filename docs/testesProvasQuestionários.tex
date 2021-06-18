@@ -2,12 +2,13 @@
     a4paper,
     12pt,
     addpoints,
-    % answers
+    answers
 ]{exam}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[lmargin=3cm,rmargin=2cm,tmargin=2cm,bmargin=2cm]{geometry}
 \usepackage[brazil]{babel}
+\usepackage{amssymb}
 
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -44,6 +45,10 @@
 \definecolor{GridColor}{rgb}{0.8,0.85,1}
 \colorfillwithdottedlines
 \definecolor{FillWithDottedLinesColor}{gray}{0.8}
+
+\CorrectChoiceEmphasis{\color{red}\bfseries}
+\checkboxchar{$\Box$} % \usepackage{amssymb}
+\checkedchar{$\blacksquare$} % \usepackage{amssymb}
 
 
 \hqword{Questão}
@@ -144,7 +149,7 @@
                 \choice Restaurante.
             \end{oneparchoices}
 
-            \part[3] Onde vende água?
+            \part[3] Onde vende água? % Aqui não precisa linha vazia. Começa na outra linha de qualquer forma.
             \begin{checkboxes}
                 \choice Farmácia.
                 \choice Mercado.
