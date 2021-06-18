@@ -2,41 +2,79 @@
     a4paper,
     12pt,
     addpoints,
-    answers
-]{exam}
-\usepackage[utf8]{inputenc}
+    % answers
+]{exam} % Documentação: https://ctan.dcc.uchile.cl/macros/latex/contrib/exam/examdoc.pdf
+% -------------Início do preâmbulo-------------
+\usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
-\usepackage[lmargin=3cm,rmargin=2cm,tmargin=2cm,bmargin=2cm]{geometry}
-\usepackage[brazil]{babel}
-\usepackage{amssymb}
+\usepackage[lmargin=3cm,rmargin=2cm,tmargin=2cm,bmargin=2cm]{geometry} % Margens 
+\usepackage[brazil]{babel} 
+\usepackage{amssymb} % Símbolos (principalmente matemáticos)
 
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage[]{hyperref}
+\usepackage{graphicx} % Suporte ao \includegraphics[options]{name}
+\usepackage{xcolor} % Cores
+\usepackage[
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitW},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1, key2, key3}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=cyan,         % color of file links
+    urlcolor=magenta        % color of external links
+]{hyperref} % Referência cruzada com direcionamento automático
 
-\pagestyle{headandfoot}
-\firstpageheadrule
+
+% Os itens a seguir servem para editar os cabeçalhos e os rodapés.
+% Eles são específicos para esta classe.
+
+% Determina que as páginas terão cabeçalho e rodapé:
+% \pagestyle{empty} % Sem cabeçalho sem rodapé
+% \pagestyle{head} % Com cabeçalho sem rodapé
+% \pagestyle{foot} % Sem cabeçalho com rodapé
+\pagestyle{headandfoot} % Com cabeçalho com rodapé
+\firstpageheadrule % Linha horizontal no cabeçalho na primeira página do documento
+% Cabeçalho da primeira página:
+% \firstpageheader{parte esqueda}{parte central}{parte direita} 
 \firstpageheader{Nightwind \\ Professor}{\large \sffamily Primeiro Trabalho \\ Disciplina: \LaTeX}{25 de março de 2021}
 
-\firstpagefootrule
+\firstpagefootrule % Linha horizontal no rodapé na primeira página do documento
+% \firstpagefooter{parte esqueda}{parte central}{parte direita} 
 \firstpagefooter{\bfseries \sffamily Nightwind}{}{\itshape \ttfamily Bom Trabalho!}
 
-\runningheadrule
+\runningheadrule % Linha horizontal no cabeçalho nas demais páginas do documento
+% \runningheader{parte esqueda}{parte central}{parte direita} 
 \runningheader{Primeiro Trabalho}{}{\makebox[5cm]{Matrícula:\enspace\hrulefill}}
-
+% \runningfooter{parte esqueda}{parte central}{parte direita} 
 \runningfooter{Nightwind}{Bom Trabalho!}{Página \thepage \, de \numpages.}
-\runningfootrule
+\runningfootrule % Linha horizontal no rodapé nas demais páginas do documento
 
 % \pointname{\%}
-\pointpoints{ponto}{pontos}
-\bonuspointpoints{ponto (bônus)}{pontos (bônus)}
-% \boxedpoints
-% \bracketedpoints
+\pointpoints{ponto}{pontos} % Mudança do nome dos pontos no singular e plural
+\bonuspointpoints{ponto (bônus)}{pontos (bônus)} % Mudança do nome dos pontos bônus no singular e plural
+% \boxedpoints % Para ter os pontos dentro de caixinhas
+% \bracketedpoints % Para ter os pontos entre colchetes
+% \pointsinmargin  % Coloca os pontos na margem
+% \marginpointname{\%} % Determina um nome, independente do numero 
 
-% \pointsinmargin
-% \marginpointname{\%}
+% Comando para redefinir a aparêcia das listas. 
+\renewcommand{\questionlabel}{\bfseries Questão \thequestion.}
+% \renewcommand{\partlabel}{(\thepartno)}
+% \renewcommand{\subpartlabel}{\thesubpart.}
+% \renewcommand{\subsubpartlabel}{\thesubsubpart)}
+% \renewcommand{\choicelabel}{\thechoice.}
 
-
+% Comandos para alterar a aparência das soluções
 \renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
 \colorfillwithlines
 \definecolor{FillWithLinesColor}{gray}{0.8}
@@ -45,23 +83,23 @@
 \definecolor{GridColor}{rgb}{0.8,0.85,1}
 \colorfillwithdottedlines
 \definecolor{FillWithDottedLinesColor}{gray}{0.8}
-
 \CorrectChoiceEmphasis{\color{red}\bfseries}
 \checkboxchar{$\Box$} % \usepackage{amssymb}
 \checkedchar{$\blacksquare$} % \usepackage{amssymb}
 
-
+% Comandos para traduzir a tabela de pontos.s
 \hqword{Questão}
 \hpgword{Página}
 \hpword{Valor}
 \hsword{Pontos}
 \htword{Total} 
 
-
+% -------------Final do preâmbulo-------------
+% -------------Início do documento-------------
 \begin{document}
 
 \begin{center}
-    \fbox{\fbox{\parbox{0.5\textwidth}{
+    \fbox{\fbox{\parbox{0.5\textwidth}{\centering
         Para este trabalho é permitido:
         \begin{itemize}
             \item usar calculadora;
@@ -81,10 +119,13 @@
         \question[2] Questão 1: 
         \begin{parts}
             \part[1] Pergunta a da \autoref{question@1}:
-            \begin{solutionorbox}[1in]
+            % \makeemptybox{3cm}
+            \begin{solutionorbox}[3cm]
                 A solução é esta.
             \end{solutionorbox}
+
             \part[1] Pergunta b da \autoref{question@1}
+            % \makeemptybox{3cm}
             \begin{solutionordottedlines}[1in]
                 A solução é esta.
             \end{solutionordottedlines}
@@ -167,3 +208,4 @@
         \end{parts}
     \end{questions}
 \end{document}
+% -------------Final do documento-------------
