@@ -1,0 +1,171 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{caption}
+\hypersetup{
+    final=true,
+    % bookmarks=true,
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitW},    % fits the width of the page to the window
+    pdftitle={Estrutura de um documento \LaTeX},    % title
+    pdfauthor={Nightwind},     % author
+    %pdfsubject={Subject},   % subject of the document
+    % pdfcreator={Creator},   % creator of the document
+    % pdfproducer={Producer}, % producer of the document
+    pdfkeywords={latex, dicas}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=cyan,         % color of file links
+    urlcolor=magenta        % color of external links
+}
+\usepackage[style=abnt]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}
+
+\usepackage{tabularx}
+
+\usepackage{xcolor}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\usepackage{listings}
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\ttfamily\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1000,                % start line enumeration with line 1000
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=[LaTeX]TeX,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\usepackage{menukeys}
+
+\title{Estrutura de um documento \LaTeX }
+\author{Nightwind}
+\institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
+\logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents
+\end{frame}
+
+\section{Classes}
+
+\begin{frame}[fragile]
+    \frametitle{O que são classes no \LaTeX?}
+
+    \begin{itemize}
+        \item São modelos de documentos. Elas determinam as grandes configurações, comandos e apresentações do arquivo.
+        \item Pode ser que uma classe padrão não apresente o conteúdo da maneira esperada, deste modo, pode-se criar uma classe e carregar ela junto com o documento \lstinline[]!.tex!.
+        \item A classe possui o formato \lstinline[]!.cls!.
+        \item Sempre que uma classe for criada para uma finalidade, é importante manter junto com o arquivo \lstinline[]!.tex!.
+        \item Como escrever uma classe do zero é uma tarefa difícil, há classes padrões que atendem muito bem as necessidades do usuário. 
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Classes que podem ser as mais úteis}
+\begin{lstlisting}
+    \documentclass[<options>]{<class>}
+\end{lstlisting}
+\begin{tabularx}{\textwidth}{rX}
+    \hline
+    \textbf{Classe} & \textbf{Características} \\ \hline
+    \lstinline[]!article! & Arquivos pequenos e simples, artigos científicos, relatórios mais simples. \\ \hline
+    \lstinline[]!beamer! & Padrão para gerar slides, apresentações. \\ \hline
+    \lstinline[]!book! & Bastante conteúdo, bastante informação, livros. \\ \hline
+    \lstinline[]!exam! & Destinada para a criação de testes, provas, questionários. \\ \hline
+    \lstinline[]!report! & Para relatórios longos, com muitos capítulos, seções e etc. \\ \hline
+\end{tabularx}
+\end{frame}
+
+\section{Opções de Classes}
+
+\begin{frame}
+    \frametitle{Opções das Classes}
+\begin{table}[h]\small
+    \begin{tabularx}{\textwidth}{XX}
+        \hline
+        \textbf{Opção} & \textbf{Descrição} \\ \hline
+        \lstinline[basicstyle={\bfseries\footnotesize}]!10pt!, \lstinline[]!11pt, 12pt! & Define o tamanho padrão da fonte. \\ \hline
+        \lstinline[basicstyle={\bfseries\footnotesize}]!letterpaper!, \lstinline[]!a4paper, a5paper, b5paper, executivepaper, legalpaper! & Tamanho do papel. \\ \hline
+        \lstinline[]!leqno! & Numeração da equação na margem esquerda. O padrão é que a numeração fique na margem direita. \\ \hline
+        \lstinline[]!fleqn! & Alinhar a equação à esquerda. O padrão é que a equação seja centralizada. \\ \hline
+        \lstinline!titlepage, notitlepage! & Com ou sem página de título. Em \lstinline!article!, o padrão é sem página de título, em quanto que em \lstinline!book! e \lstinline!report! o padrão é ter uma página para título. \\ \hline
+    \end{tabularx}
+\end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Opções das Classes}
+\begin{table}[h]\small
+    \begin{tabularx}{\textwidth}{XX}
+        \hline
+        \textbf{Opção} & \textbf{Descrição} \\ \hline
+        \lstinline!landscape! & Deixa a página no formato paisagem. \\ \hline
+        \lstinline!openright, openany! & Faz com que os capítulos comecem em páginas da direita ou na próxima página disponível. \lstinline!openright! é o padrão para \lstinline!book!. \lstinline!openany! é o padrão para \lstinline!report!. \\ \hline
+    \end{tabularx}
+\end{table}
+\end{frame}
+
+\section{Exemplos}
+
+\begin{frame}[fragile]
+    \frametitle{Exemplos}
+\begin{lstlisting}
+    \documentclass[a4paper,12pt,titlepage]{article}
+\end{lstlisting}
+\begin{lstlisting}
+    \documentclass[a4paper,12pt,openany]{book}
+\end{lstlisting}
+\begin{lstlisting}
+    \documentclass[a4paper,12pt]{exam}
+\end{lstlisting}
+
+\end{frame}
+
+\section{Referências}
+\begin{frame}
+    \frametitle{Referências}
+    \nocite{WikibooksLatex,BeamerDocumentation,ExamDocumentation,latex24h}
+    \printbibliography[]
+
+\end{frame}
+
+
+\end{document}
