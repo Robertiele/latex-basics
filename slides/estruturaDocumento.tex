@@ -12,7 +12,7 @@
     unicode=false,          % non-Latin characters in Acrobat’s bookmarks
     pdftoolbar=true,        % show Acrobat’s toolbar?
     pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=false,     % window fit to page when opened
+    pdffitwindow=true,     % window fit to page when opened
     pdfstartview={FitW},    % fits the width of the page to the window
     pdftitle={Estrutura de um documento \LaTeX},    % title
     pdfauthor={Nightwind},     % author
@@ -88,88 +88,13 @@
 \subsection{Preâmbulo}
 \subsection{Documento}
 
-\section{Classes}
 
-\begin{frame}[fragile]
-    \frametitle{O que são classes no \LaTeX?}
 
-    \begin{itemize}
-        \item São modelos de documentos. Elas determinam as grandes configurações, comandos e apresentações do arquivo.
-        \item Pode ser que uma classe padrão não apresente o conteúdo da maneira esperada, deste modo, pode-se criar uma classe e carregar ela junto com o documento \lstinline[]!.tex!.
-        \item A classe possui o formato \lstinline[]!.cls!.
-        \item Sempre que uma classe for criada para uma finalidade, é importante manter junto com o arquivo \lstinline[]!.tex!.
-        \item Como escrever uma classe do zero é uma tarefa difícil, há classes padrões que atendem muito bem as necessidades do usuário. 
-    \end{itemize}
-
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Classes que podem ser as mais úteis}
-\begin{lstlisting}
-    \documentclass[<options>]{<class>}
-\end{lstlisting}
-\begin{tabularx}{\textwidth}{rX}
-    \hline
-    \textbf{Classe} & \textbf{Características} \\ \hline
-    \lstinline[]!article! & Arquivos pequenos e simples, artigos científicos, relatórios mais simples. \\ \hline
-    \lstinline[]!beamer! & Padrão para gerar slides, apresentações. \\ \hline
-    \lstinline[]!book! & Bastante conteúdo, bastante informação, livros. \\ \hline
-    \lstinline[]!exam! & Destinada para a criação de testes, provas, questionários. \\ \hline
-    \lstinline[]!report! & Para relatórios longos, com muitos capítulos, seções e etc. \\ \hline
-\end{tabularx}
-\end{frame}
-
-\section{Opções de Classes}
-
-\begin{frame}
-    \frametitle{Opções das Classes}
-\begin{table}[h]\small
-    \begin{tabularx}{\textwidth}{XX}
-        \hline
-        \textbf{Opção} & \textbf{Descrição} \\ \hline
-        \lstinline[basicstyle={\bfseries\footnotesize}]!10pt!, \lstinline[]!11pt, 12pt! & Define o tamanho padrão da fonte. \\ \hline
-        \lstinline[basicstyle={\bfseries\footnotesize}]!letterpaper!, \lstinline[]!a4paper, a5paper, b5paper, executivepaper, legalpaper! & Tamanho do papel. \\ \hline
-        \lstinline[]!leqno! & Numeração da equação na margem esquerda. O padrão é que a numeração fique na margem direita. \\ \hline
-        \lstinline[]!fleqn! & Alinhar a equação à esquerda. O padrão é que a equação seja centralizada. \\ \hline
-        \lstinline!titlepage, notitlepage! & Com ou sem página de título. Em \lstinline!article!, o padrão é sem página de título, em quanto que em \lstinline!book! e \lstinline!report! o padrão é ter uma página para título. \\ \hline
-    \end{tabularx}
-\end{table}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Opções das Classes}
-\begin{table}[h]\small
-    \begin{tabularx}{\textwidth}{XX}
-        \hline
-        \textbf{Opção} & \textbf{Descrição} \\ \hline
-        \lstinline!landscape! & Deixa a página no formato paisagem. \\ \hline
-        \lstinline!openright, openany! & Faz com que os capítulos comecem em páginas da direita ou na próxima página disponível. \lstinline!openright! é o padrão para \lstinline!book!. \lstinline!openany! é o padrão para \lstinline!report!. \\ \hline
-    \end{tabularx}
-\end{table}
-\end{frame}
-
-\section{Exemplos}
-
-\begin{frame}[fragile]
-    \frametitle{Exemplos}
-\begin{lstlisting}
-    \documentclass[a4paper,12pt,titlepage]{article}
-\end{lstlisting}
-\begin{lstlisting}
-    \documentclass[a4paper,12pt,openany]{book}
-\end{lstlisting}
-\begin{lstlisting}
-    \documentclass[a4paper,12pt]{exam}
-\end{lstlisting}
-
-\end{frame}
-
-\section{Referências}
+\section{Referências}[allowframebreaks]
 \begin{frame}
     \frametitle{Referências}
     \nocite{WikibooksLatex,BeamerDocumentation,ExamDocumentation,latex24h}
     \printbibliography[]
-
 \end{frame}
 
 
