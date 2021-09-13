@@ -34,8 +34,7 @@
 
 \usepackage{xcolor}
 \usepackage{listings}
-\lstset
-{breakatwhitespace=true,breaklines=true,language=[LaTeX]TeX,basicstyle=\small\ttfamily,flexiblecolumns,backgroundcolor=\color{white}}
+\input{setup_listings.tex}
 
 \title{Utilizando o Visual Studio Code no Windows}
 \author{Nightwind}
@@ -127,7 +126,7 @@
     \centering
     \caption{Confirmação de instalação.}
     \label{fig:verificador_instalacao}
-    \includegraphics[width=0.75\textheight]{../images/verificador_instalação.png}
+    \includegraphics[width=0.75\textheight]{../images/verificador_instalacao.png}
     \caption*{\footnotesize Leia atentamente e clique em ``Instalar'' caso esteja tudo certo. Senão volte nas configurações que deseja alterar.}
 \end{figure}
 \end{frame}
@@ -159,7 +158,7 @@
     \centering
     \caption{Extensões sugeridas.}
     \label{fig:extensoes}
-    \includegraphics[width=0.8\textheight]{../images/extensões.png}
+    \includegraphics[width=0.8\textheight]{../images/extensoes.png}
     \caption*{\footnotesize Observar que o ícone de extensões está sempre no lado esquerdo da tela. Sempre que precisar instalar uma extensão, clicar nele.}
 \end{figure}
 \end{frame}
