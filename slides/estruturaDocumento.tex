@@ -66,9 +66,11 @@
   tabsize=2,	                   % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
+
 \usepackage{menukeys}
 
-\title{Estrutura de um documento \LaTeX}
+
+\title[shorttitle]{Estrutura de um documento \LaTeX}
 \author{Nightwind}
 \institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
 \logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
@@ -84,14 +86,19 @@
 \end{frame}
 
 
+\section{Estrutura de ambientes do código}
+\section{}
+
 \section{Estrutura geral}
 \subsection{Preâmbulo}
 \subsection{Documento}
 
+\section{Estrutura de títulos por classe}
+\subsection{article, exam, beamer}
+\subsection{book, report}
 
-
-\section{Referências}[allowframebreaks]
-\begin{frame}
+\section{Referências}
+\begin{frame}[allowframebreaks]
     \frametitle{Referências}
     \nocite{WikibooksLatex,BeamerDocumentation,ExamDocumentation,latex24h}
     \printbibliography[]
