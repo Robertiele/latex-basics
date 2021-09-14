@@ -108,11 +108,31 @@
 
     \begin{itemize}
         \item Todos os pacotes utilizados precisam ser chamados no preâmbulo.
-        \item Ele começa no \lstinline[style=myStyleLatex]!\documentclass[options]{style}! e termina no \lstinline[style=myStyleLatex]!\begin{document}!
+        \item Ele começa no \lstinline[style=myStyleLatex]!\documentclass[options]{style}! e termina no \lstinline[style=myStyleLatex]!\begin{document}!.
+        \item Os comandos \lstinline[style=myStyleLatex]!\renewcommand{command}[arguments][default]{definition}! e \lstinline[style=myStyleLatex]!\newcommand{command}[arguments][default]{definition}! que são listados no preâmbulo, são válidos em todo o documento.
+        \begin{itemize}
+            \item Se fosse colocado no início do ambiente, ele mudaria somente aquele ambiente.
+            \item Exemplo: ambiente de listas, tem os contadores ou os ícones alterados através de \lstinline[style=myStyleLatex]!\renewcommand{command}[arguments][default]{definition}!.
+        \end{itemize}
+        \item É onde se altera o cabeçalho e o rodapé das folhas.
     \end{itemize}
-
 \end{frame}
 \subsection{Documento}
+\begin{frame}[fragile]
+    \frametitle{Documento}
+
+    \begin{itemize}
+        \item É o ambiente que recebe o conteúdo do documento.
+        \item Nele terão todas as divisões em capítulos, seções, subseções, parágrafos, \textit{et cetera}.
+        \item No geral, para texto corrido não há necessidade de muitos cuidados, ele é muito mais simples de se controlar do que editores de texto comuns.
+        \item Alguns destaques que o texto pode receber é com relação ao:
+        \begin{itemize}
+            \item negrito: \lstinline[style=myStyleLatex]!\textbf{text}!
+            \item itálico: \lstinline[style=myStyleLatex]!\textit{text}!
+        \end{itemize}
+        \item É o ambiente que mais vai receber ``subambientes''. Cada lista, cada equação, cada slide, cada tabela e imagem. Todos estes tem seus próprios ambientes e demandam tratamentos especiais.
+    \end{itemize}
+\end{frame}
 
 \section{Estrutura de títulos por classe}
 \subsection{article, exam, beamer}
