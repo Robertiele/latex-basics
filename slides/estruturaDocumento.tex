@@ -77,13 +77,41 @@
     \documentclass[options]{style}
     \usepackage[options]{package}
     (*$\vdots$*)
-    \end{lstlisting}
+    \title{title}
+    \author{names}
+    \date{\today}
 
+    \begin{document}
+        \maketitle
+        (*$\vdots$*)
+    \end{document}
+    \end{lstlisting}
 \end{frame}
 
 
 \section{Estrutura geral}
+\begin{frame}
+    \frametitle{Estrutura geral}
+
+    \begin{itemize}
+        \item O documento \textit{.tex} é formado por, no mínimo, duas partes: 
+        \begin{itemize}
+            \item Preâmbulo: onde se faz a declaração dos parâmetros e a conexão com os pacotes.
+            \item Documento: onde vai o conteúdo do documento.
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
 \subsection{Preâmbulo}
+\begin{frame}[fragile]
+    \frametitle{Preâmbulo}
+
+    \begin{itemize}
+        \item Todos os pacotes utilizados precisam ser chamados no preâmbulo.
+        \item Ele começa no \lstinline[style=myStyleLatex]!\documentclass[options]{style}! e termina no \lstinline[style=myStyleLatex]!\begin{document}!
+    \end{itemize}
+
+\end{frame}
 \subsection{Documento}
 
 \section{Estrutura de títulos por classe}
