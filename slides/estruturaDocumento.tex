@@ -62,7 +62,7 @@
     \frametitle{Contexto e introdução}
 
     \begin{itemize}
-        \item O \LaTeX foi desenvolvido para que houvesse maior ``facilidade'' de gerar documentos científicos. Sem uma estruturação bem de comandos bem definida, o código não funciona e os erros se tornam mais frequentes do que o normal.
+        \item O \LaTeX foi desenvolvido para que houvesse maior ``facilidade'' de gerar documentos científicos. Sem uma estruturação de comandos bem definida, o código não funciona e os erros se tornam mais frequentes do que o normal.
         \item Para chamar um ``comando'' do \LaTeX, utiliza-se a barra: \lstinline!\!. 
         \item A maioria dos ``comandos'' é seguido de chaves: \lstinline!{}!, o preenchimento delas é obrigatório e varia de acordo com o ``comando''.
         \item Alguns ``comandos'' possuem o compos para preenchimento opcional. Eles são delimitados por colchetes: \lstinline![]!. Eles servem para escolher opções, configurar o pacote que está sendo chamado, apresentar uma versão reduzida do texto que será impresso (título, seção, instituição).
@@ -74,30 +74,30 @@
     \frametitle{Formação e função}
 
     \begin{lstlisting}[style = myStyleLatex]
-    \documentclass[options]{style}
-    \usepackage[options]{package}
-    (*$\vdots$*)
-    \title{title}
-    \author{names}
-    \date{\today}
+\documentclass[options]{style}
+\usepackage[options]{package}
+(*$\vdots$*)
+\title{title}
+\author{names}
+\date{\today}
 
-    \begin{document}
-        \maketitle
-        (*$\vdots$*)
-    \end{document}
+\begin{document}
+    \maketitle
+    (*$\vdots$*)
+\end{document}
     \end{lstlisting}
 \end{frame}
 
 
 \section{Estrutura geral}
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Estrutura geral}
 
     \begin{itemize}
         \item O documento \textit{.tex} é formado por, no mínimo, duas partes: 
         \begin{itemize}
             \item Preâmbulo: onde se faz a declaração dos parâmetros e a conexão com os pacotes.
-            \item Documento: onde vai o conteúdo do documento.
+            \item Documento: delimitado por \lstinline[style=myStyleLatex]!\begin{document}\end{document}!, é o ambiente responsável por receber o conteúdo do documento final.
         \end{itemize}
     \end{itemize}
 
@@ -109,12 +109,12 @@
     \begin{itemize}
         \item Todos os pacotes utilizados precisam ser chamados no preâmbulo.
         \item Ele começa no \lstinline[style=myStyleLatex]!\documentclass[options]{style}! e termina no \lstinline[style=myStyleLatex]!\begin{document}!.
+        \item É onde se altera o cabeçalho e o rodapé das folhas.
         \item Os comandos \lstinline[style=myStyleLatex]!\renewcommand{command}[arguments][default]{definition}! e \lstinline[style=myStyleLatex]!\newcommand{command}[arguments][default]{definition}! que são listados no preâmbulo, são válidos em todo o documento.
         \begin{itemize}
             \item Se fosse colocado no início do ambiente, ele mudaria somente aquele ambiente.
             \item Exemplo: ambiente de listas, tem os contadores ou os ícones alterados através de \lstinline[style=myStyleLatex]!\renewcommand{command}[arguments][default]{definition}!.
         \end{itemize}
-        \item É onde se altera o cabeçalho e o rodapé das folhas.
     \end{itemize}
 \end{frame}
 \subsection{Documento}
@@ -130,18 +130,41 @@
             \item negrito: \lstinline[style=myStyleLatex]!\textbf{text}!
             \item itálico: \lstinline[style=myStyleLatex]!\textit{text}!
         \end{itemize}
-        \item É o ambiente que mais vai receber ``subambientes''. Cada lista, cada equação, cada slide, cada tabela e imagem. Todos estes tem seus próprios ambientes e demandam tratamentos especiais.
     \end{itemize}
 \end{frame}
 
-\subsubsection{article, exam, beamer}
-\subsubsection{book, report}
+\begin{frame}[fragile]
+    \frametitle{Ambientes}
+
+    \begin{itemize}
+        \item É o ambiente que mais vai receber ``subambientes''. Cada lista, cada equação, cada slide, cada tabela e imagem. Todos estes tem seus próprios ambientes e demandam tratamentos especiais.
+        \item Eles são delimitados por: 
+\begin{lstlisting}[style=myStyleLatex]
+\begin{ambiente}
+    (*$\vdots$*)
+\end{ambiente}
+\end{lstlisting}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Títulos}
+
+    \begin{itemize}
+        \item A estrutura de títulos varia de acordo com a classe:
+        \begin{itemize}
+            \item Para \lstinline[style=myStyleLatex]!article, exam, beamer!, hierarquia é: \lstinline[style=myStyleLatex]!part, section, subsection, subsubsection, paragraph, subparagraph!
+            \item Para \lstinline[style=myStyleLatex]!book, report!, há também o comando \lstinline[style=myStyleLatex]!\chapter{text}! antes de \lstinline[style=myStyleLatex]!\section{text}!
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
 
 \section{Referências}
 \begin{frame}[allowframebreaks]
-    \frametitle{Referências}
-    \nocite{WikibooksLatex,BeamerDocumentation,ExamDocumentation,latex24h}
-    \printbibliography[]
+    \nocite{*}
+    \printbibliography[keyword={structure}]
 \end{frame}
 
 
