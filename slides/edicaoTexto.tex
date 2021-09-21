@@ -1,0 +1,92 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{caption}
+\hypersetup{
+    final=true,
+    % bookmarks=true,
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,     % window fit to page when opened
+    pdfstartview={FitW},    % fits the width of the page to the window
+    pdftitle={Edição de Texto},    % title
+    pdfauthor={Nightwind},     % author
+    % pdfsubject={Subject},   % subject of the document
+    % pdfcreator={Creator},   % creator of the document
+    % pdfproducer={Producer}, % producer of the document
+    pdfkeywords={latex, dicas}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=cyan,         % color of file links
+    urlcolor=magenta        % color of external links
+}
+\usepackage[style=abnt]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}
+
+\usepackage{tabularx}
+
+\usepackage{xcolor}
+
+\usepackage{listings}
+\input{setup_listings.tex}
+
+\usepackage{menukeys}
+
+
+\title{Edição de Texto}
+\author{Nightwind}
+\institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
+\logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents
+\end{frame}
+
+\section{Fontes}
+\begin{frame}
+    \frametitle{Fontes padrão}
+
+    \begin{itemize}
+        \item 
+    \end{itemize}
+
+\end{frame}
+
+
+\section{Negrito, itálico, sublinhado e riscado}
+
+\section{Tamanhos de letras}
+
+\section{Subscrito e sobrescrito}
+
+\section{Cor de texto e destaque colorido}
+
+\section{Alinhamento}
+
+\section{Distância entre linhas}
+
+\section{Recuo de linhas}
+
+\section{Referências}
+\begin{frame}[allowframebreaks]
+    \frametitle{Referências}
+    \nocite{*}
+    \printbibliography[keyword={editText}]
+\end{frame}
+
+
+\end{document}
