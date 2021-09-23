@@ -14,7 +14,6 @@ Repositório criado para manter arquivos com dicas básicas para utilização do
 - [ ] Inserir tabelas.
 - [ ] Inserir códigos.
 - [ ] Inserir equações.
-- [ ] Inserir definições, exemplos coloridos.
 - [ ] Referência cruzada.
 - [ ] Citação e referências na ABNT.
 - [ ] Incluir anexos.

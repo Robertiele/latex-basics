@@ -67,7 +67,7 @@
 % \pointsinmargin  % Coloca os pontos na margem
 % \marginpointname{\%} % Determina um nome, independente do numero 
 
-% Comando para redefinir a aparêcia das listas. 
+% Comando para redefinir a aparência das listas. 
 \renewcommand{\questionlabel}{\bfseries Questão \thequestion.}
 % \renewcommand{\partlabel}{(\thepartno)}
 % \renewcommand{\subpartlabel}{\thesubpart.}
@@ -93,6 +93,13 @@
 \hpword{Valor}
 \hsword{Pontos}
 \htword{Total} 
+
+% Teste de fonte
+% \renewcommand{\familydefault}{\ttdefault}
+\usepackage{fontspec}
+\setmainfont{Cabin}[
+    BoldFont = Fira Sans
+]
 
 % -------------Final do preâmbulo-------------
 % -------------Início do documento-------------

@@ -57,24 +57,75 @@
 \end{frame}
 
 \section{Fontes}
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Fontes padrão}
 
     \begin{itemize}
-        \item https://en.wikibooks.org/wiki/LaTeX/Fonts#Font_families
-        \item https://texfaq.org/FAQ-casechange
-        \item http://applied-r.com/latex-font-styles/
-        \item https://tug.org/FontCatalogue/
+        \item O \LaTeX tem como padrão a fonte ``Computer Modern''. Essa fonte pode assumir três padrões: \textit{serif}, \textit{sans serif} e \textit{monospaced}.
+        \item O padrão \textit{serif} é selecionado automaticamente. 
+        \item Para mudar o documento inteiro, utiliza-se \lstinline[style=myStyleLatex]!\renewcommand{\familydefault}{<familia>}!
+        \item O campo ``família'' pode assumir: \lstinline[style=myStyleLatex]!\rmdefault, \sfdefault, \ttdefault!
+        \item Dentro de um ambiente, pode utilizar os comandos \lstinline[style=myStyleLatex]!\rmfamily, \sffamily, \ttfamily! para alterar o tipo de fonte naquela parte do documento.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Fontes instaladas no PC}
+
+    \begin{itemize}
+        \item Utilizar o pacote: \lstinline[style=myStyleLatex]!\usepackage{fontspec}!. 
+        \item Avaliar se a fonte garante todas as edições: negrito, itálico, etc.
+        \item Para utilizar o pacote, precisa utilizar o LuaLaTeX para compilar.
+        \item Se colocar o comando \lstinline[style=myStyleLatex]!\setmainfont{<nome da fonte>}! no preâmbulo para todo o documento. Ou no ambiente que se deseja utilizar.
     \end{itemize}
 
 \end{frame}
 
 
 \section{Negrito, itálico, sublinhado e riscado}
+\begin{frame}[fragile]
+    \frametitle{Declaração em bloco}
+
+    \begin{table}[h]
+        \caption{Formatos.}
+        \begin{tabular}{c|r|l}
+            Nome & Comando & Resultado \\ \hline 
+            Negrito & \lstinline[style=myStyleLatex]!\textbf{Teste 123}! & \textbf{Teste 123} \\ \hline 
+            Normal & \lstinline[style=myStyleLatex]!\textmd{Teste 123}! & \textmd{Teste 123} \\ \hline 
+            Itálico & \lstinline[style=myStyleLatex]!\textit{Teste 123}! & \textit{Teste 123} \\ \hline 
+            Inclinado & \lstinline[style=myStyleLatex]!\textsl{Teste 123}! & \textsl{Teste 123} \\ \hline
+            Sublinhado & \lstinline[style=myStyleLatex]!\underline{Teste 123}! & \underline{Teste 123} \\ \hline 
+            Maiúsculas pequenas & \lstinline[style=myStyleLatex]!\textsc{Teste 123}! & \textsc{Teste 123} \\ \hline
+            Monoespaçada & \lstinline[style=myStyleLatex]!\texttt{Teste 123}! & \texttt{Teste 123} \\ \hline
+            Maiúsculas & \lstinline[style=myStyleLatex]!\uppercase{Teste 123}! & \uppercase{Teste 123} \\ \hline 
+            Minúsculas & \lstinline[style=myStyleLatex]!\lowercase{Teste 123}! & \lowercase{Teste 123} \\ \hline 
+            Sobreescrito & \lstinline[style=myStyleLatex]!Teste \textsuperscript{123}! & Teste \textsuperscript{123} \\ \hline
+            Subscrito & \lstinline[style=myStyleLatex]!Teste \textsubscript{123}! & Teste \textsubscript{123} \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Declaração Global}
+
+    \begin{table}[h]
+        \caption{Formatos.}
+        \begin{tabular}{c|r}
+            Nome & Comando \\ \hline 
+            Negrito & \lstinline[style=myStyleLatex]!\bfseries! \\ \hline 
+            Normal & \lstinline[style=myStyleLatex]!\mdseries! \\ \hline 
+            Itálico & \lstinline[style=myStyleLatex]!\itshape ! \\ \hline 
+            Inclinado & \lstinline[style=myStyleLatex]!\slshape! \\ \hline
+            Maiúsculas pequenas & \lstinline[style=myStyleLatex]!\scshape! \\ \hline
+            Monoespaçada & \lstinline[style=myStyleLatex]!\ttshape! \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
 
 \section{Tamanhos de letras}
-
-\section{Subscrito e sobrescrito}
 
 \section{Cor de texto e destaque colorido}
 
