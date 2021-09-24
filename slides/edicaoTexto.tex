@@ -88,7 +88,6 @@
     \frametitle{Declaração em bloco}
 
     \begin{table}[h]
-        \caption{Formatos.}
         \begin{tabular}{c|r|l}
             Nome & Comando & Resultado \\ \hline 
             Negrito & \lstinline[style=myStyleLatex]!\textbf{Teste 123}! & \textbf{Teste 123} \\ \hline 
@@ -111,12 +110,11 @@
     \frametitle{Declaração Global}
 
     \begin{table}[h]
-        \caption{Formatos.}
         \begin{tabular}{c|r}
             Nome & Comando \\ \hline 
             Negrito & \lstinline[style=myStyleLatex]!\bfseries! \\ \hline 
             Normal & \lstinline[style=myStyleLatex]!\mdseries! \\ \hline 
-            Itálico & \lstinline[style=myStyleLatex]!\itshape ! \\ \hline 
+            Itálico & \lstinline[style=myStyleLatex]!\itshape! \\ \hline 
             Inclinado & \lstinline[style=myStyleLatex]!\slshape! \\ \hline
             Maiúsculas pequenas & \lstinline[style=myStyleLatex]!\scshape! \\ \hline
             Monoespaçada & \lstinline[style=myStyleLatex]!\ttshape! \\ \hline
@@ -126,6 +124,42 @@
 \end{frame}
 
 \section{Tamanhos de letras}
+
+\begin{frame}[fragile]
+    \frametitle{Padrão}
+
+    \begin{itemize}
+        \item O tamanho padrão é 10pt.
+        \item Outros dois tamanhos podem ser escolhidos nas opções do comando inicial do \LaTeX. 
+        \item Pode assumir os valores de 11pt ou 12pt.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Variações de Tamanhos}
+
+    \begin{itemize}
+        \item As alterações de tamanho são relativas ao tamanho inicial. 
+        \item Se for definição em bloco, utiliza-se o par de chaves. Se for definição global, só declarar o comando (sem chaves) dentro do ambiente.
+    \end{itemize}
+
+    \begin{table}[h]
+        \begin{tabular}{r|l}
+            Comando & Resultado \\ \hline 
+            \lstinline[style=myStyleLatex]!\tiny{Teste}! & \tiny{Teste} \\ \hline 
+            \lstinline[style=myStyleLatex]!\scriptsize{Teste}! & \scriptsize{Teste} \\ \hline 
+            \lstinline[style=myStyleLatex]!\small{Teste}! & \small{Teste} \\ \hline 
+            \lstinline[style=myStyleLatex]!\normalsize{Teste}! & \normalsize{Teste} \\ \hline 
+            \lstinline[style=myStyleLatex]!\large{Teste}! & \large{Teste} \\ \hline 
+            \lstinline[style=myStyleLatex]!\Large{Teste}! & \Large{Teste} \\ \hline 
+            \lstinline[style=myStyleLatex]!\LARGE{Teste}! & \LARGE{Teste} \\ \hline
+            \lstinline[style=myStyleLatex]!\huge{Teste}! & \huge{Teste} \\ \hline
+            \lstinline[style=myStyleLatex]!\Huge{Teste}! & \Huge{Teste} \\ \hline   
+        \end{tabular}
+    \end{table}
+
+\end{frame}
 
 \section{Cor de texto e destaque colorido}
 
