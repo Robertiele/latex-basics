@@ -8,24 +8,20 @@
 \usepackage{caption}
 \hypersetup{
     final=true,
-    % bookmarks=true,
-    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
-    pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=true,     % window fit to page when opened
-    pdfstartview={FitW},    % fits the width of the page to the window
-    pdftitle={Edição de Texto},    % title
-    pdfauthor={Nightwind},     % author
-    % pdfsubject={Subject},   % subject of the document
-    % pdfcreator={Creator},   % creator of the document
-    % pdfproducer={Producer}, % producer of the document
-    pdfkeywords={latex, dicas}, % list of keywords
-    pdfnewwindow=true,      % links in new PDF window
-    colorlinks=false,       % false: boxed links; true: colored links
-    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
-    citecolor=green,        % color of links to bibliography
-    filecolor=cyan,         % color of file links
-    urlcolor=magenta        % color of external links
+    unicode=false,
+    pdftoolbar=true, 
+    pdfmenubar=true,
+    pdffitwindow=true, 
+    pdfstartview={FitW},  
+    pdftitle={Edição de Texto}, 
+    pdfauthor={Nightwind},
+    pdfkeywords={latex, dicas}, 
+    pdfnewwindow=true,
+    colorlinks=false,
+    linkcolor=red,
+    citecolor=green,
+    filecolor=cyan,
+    urlcolor=magenta
 }
 \usepackage[style=abnt]{biblatex}
 \addbibresource{references.bib}
@@ -161,11 +157,82 @@
 
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{Tamanho específico}
+
+    \begin{itemize}
+        \item O comando \lstinline[style=myStyleLatex]!{\fontsize{<size>}{<skip>}\selectfont <texto>}! permite que o usuário determine o valor exato do tamanho da fonte. E o espaçamento para aquele texto.
+    \end{itemize}
+
+\end{frame}
+
 \section{Cor de texto e destaque colorido}
+\begin{frame}[fragile]
+    \frametitle{Informações do Pacote}
+
+    \begin{itemize}
+        \item Para utilizar cores, precisamos utilizar um pacote que reconheça cores. Por exemplo: \lstinline[style=myStyleLatex]!\usepackage{xcolor}!
+        \item O pacote possui um nome de cores básicas para ser usadas. Outros nomes podem ser obtidos conforme as opções adicionadas na chamada do pacote. Os nomes das cores podem ser encontrados na \href{https://ctan.dcc.uchile.cl/macros/latex/contrib/xcolor/xcolor.pdf}{documentação do pacote}.
+        \item Muitas vezes pode ser mais fácil declarar um nova cor baseada no RGB. Um site que dá a numeração pronta: \url{http://latexcolor.com/}.
+        \item Exemplo: \lstinline[style=myStyleLatex]!\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}!
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Texto colorido}
+
+    \begin{itemize}
+        \item Pode-se utilizar \lstinline[style=myStyleLatex]!\textcolor{<color>}{<text>}! para que somente um bloco de texto fique colorido.
+        \item Para um bloco pequeno de texto com destaque de fundo, utiliza-se \lstinline[style=myStyleLatex]!\colorbox{<color>}{<text>}!.
+        \item Se for um texto grande, tem chances de que a linha não quebre e dê problema na hora de compilar, para isso é interessante criar uma caixa de texto: \lstinline[style=myStyleLatex]!\colorbox{<color>}{\parbox{<size box>}{<text>}}!. O tamanho pode ser em: mm, cm, in, pt, ex, em, mu, sp.
+    \end{itemize}  
+
+\end{frame}
 
 \section{Alinhamento}
+\begin{frame}[fragile]
+    \frametitle{Ambiente para alinhamento}
+
+    \begin{itemize}
+        \item O alinhamento para o bloco de texto é feito com três ambientes básicos:
+        \begin{lstlisting}[style=myStyleLatex]
+    \begin{document}
+    (*\vdots*)
+    \begin{center}
+        (*\vdots*)
+    \end{center}
+    \begin{flushleft}
+        (*\vdots*)
+    \end{flushleft}
+    \begin{flushright}
+        (*\vdots*)
+    \end{flushright}
+    \end{document}  
+        \end{lstlisting}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Comando para alinhar}
+
+    \begin{itemize}
+        \item Para alinhar seções ou alguns tipos de ambientes, pode-se utilizar os comandos: \lstinline[style=myStyleLatex]!\raggedleft, \raggedright, \centering!.
+    \end{itemize}
+
+\end{frame}
 
 \section{Distância entre linhas}
+\begin{frame}[fragile]
+    \frametitle{Padrão \LaTeX}
+
+    \begin{itemize}
+        \item Aplicar o comando no preâmbulo: \lstinline[style=myStyleLatex]!\setlength{\baselineskip}{<size>}! para alterar a distância entre linhas
+        \item 
+    \end{itemize}
+
+\end{frame}
 
 \section{Recuo de linhas}
 
