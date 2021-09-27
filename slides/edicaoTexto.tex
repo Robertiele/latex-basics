@@ -237,10 +237,15 @@
 \begin{frame}[fragile]
     \frametitle{Recuo de linha}
     \begin{itemize}
-        \item 
+        \item Usar o comando \lstinline[style=myStyleLatex]!\setlength{\parindent}{<size>}! para determinar o valor de recuo. O tamanho é pode ser em  mm, cm, in, pt, ex, em, mu, sp.
+        \item Para demonstrar que um novo parágrafo vai inicial tem três maneiras:
+        \begin{itemize}
+            \item Uma linha vazia no código.
+            \item Ao final do texto do parágrafo anterior, inserir \lstinline[style=myStyleLatex]!\par! um novo parágrafo como recuo.  
+        \end{itemize}
+        \item Para não ter recuo de primeira linha do documento, usar o comando \lstinline[style=myStyleLatex]!\noindent!.
     \end{itemize}
 \end{frame}
-
 
 \section{Referências}
 \begin{frame}[allowframebreaks]
