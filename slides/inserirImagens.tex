@@ -1,0 +1,177 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{caption}
+\hypersetup{
+    final=true,
+    unicode=false,
+    pdftoolbar=true, 
+    pdfmenubar=true,
+    pdffitwindow=true, 
+    pdfstartview={FitW},  
+    pdftitle={Inserir Imagens}, 
+    pdfauthor={Nightwind},
+    pdfkeywords={latex, dicas}, 
+    pdfnewwindow=true,
+    colorlinks=false,
+    linkcolor=red,
+    citecolor=green,
+    filecolor=cyan,
+    urlcolor=magenta
+}
+\usepackage[style=abnt]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}
+\usepackage{cleveref}
+\crefname{figure}{Figura}{Figuras}
+
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{svg}
+
+\usepackage{xcolor}
+
+\usepackage{listings}
+\input{setup_listings.tex}
+
+\usepackage{menukeys}
+
+
+\title{Inserir Imagens}
+\author{Nightwind}
+\institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
+\logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents
+\end{frame}
+
+\section{Pacotes}
+
+\begin{frame}[fragile]
+    \frametitle{Pacotes}
+
+    \begin{itemize}
+        \item Basicamente para inserir uma imagem em png e jpg só precisa do pacote \texttt{graphicx}. Ele é equivalente ao pacote \texttt{graphics}, mas com mais funções.
+        \item O pacote \texttt{wrapfigure} serve se o objetivo for colocar uma figura em que o texto continua nos lados.
+        \item O pacote \texttt{float}, pode auxiliar à determinar a posição exata da imagem.
+        \item O pacote \texttt{svg} pode ser útil se o objetivo for adicionar uma imagem no formato svg.
+    \end{itemize}
+
+\end{frame}
+
+\section{Ambiente de imagem}
+
+\begin{frame}[fragile]
+    \frametitle{}
+    \begin{itemize}
+        \item O ambiente da imagem é caracterizado por \lstinline[style=myStyleLatex]!\begin{figure}[<pos>]...\end{figure}!, entre os colchetes, vai a posição em que se deseja inserir a imagem.
+        \item A posição pode ser:
+              \begin{itemize}
+                  \item \texttt{h}: para inserir onde a imagem é citada. Pode ser que a imagem seja adicionada em outro local porque o \LaTeX avalia onde é o melhor local para inserir.
+                  \item \texttt{t}: para inserir no início da página.
+                  \item \texttt{b}: para inserir no final da página.
+                  \item \texttt{p}: para inserir em uma página somente para imagens.
+                  \item !: para que o \LaTeX não considere o ``melhor local''
+                  \item \texttt{H}: para inserir onde a imagem é citada. Requer pacote \texttt{float}.
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section{Alinhamento}
+
+\begin{frame}[fragile]
+    \frametitle{Alinhamento}
+
+    \begin{itemize}
+        \item Por padrão, a imagem é alinhada à esquerda.
+        \item Para que seja centralizado, utiliza-se o comando \lstinline[style=myStyleLatex]!\centering!.
+        \item Para que seja alinhado à direita \lstinline[style=myStyleLatex]!\raggedright!.
+    \end{itemize}
+
+\end{frame}
+
+\section{Legenda e rótulo}
+\begin{frame}[fragile]
+    \frametitle{Legenda e rótulo}
+
+    \begin{itemize}
+        \item A legenda é expressa pelo comando \lstinline[style=myStyleLatex]!\caption[<short caption>]{<long caption>}!.
+        \item A parte entre colchetes é opcional. Ela é útil quando a legenda é muito grande, aí utiliza-se um ``resumo'' da legenda para ser expressa no sumário de figuras.
+        \item A parte entre chaves é a parte que vai aparecer junto à imagem.
+        \item O posicionamento da legenda na imagem varia de acordo com o posicionamento do comando dentro do ambiente de figura.
+              \begin{itemize}
+                  \item Quando o comando \texttt{caption} vem \textbf{antes} do comando \texttt{includegraphics}, a legenda será em cima da imagem.
+                  \item Quando o comando \texttt{caption} vem \textbf{depois} do comando \texttt{includegraphics}, a legenda será embaixo da imagem.
+              \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[style=myStyleLatex]
+\begin{figure}[<pos>]
+    \centering
+    \caption{<text>} % legenda antes
+    \label{<text>}
+    \includegraphics[<size, angle, ...>]{<image>}
+\end{figure}
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+    \begin{lstlisting}[style=myStyleLatex]
+\begin{figure}[<pos>]
+    \centering
+    \includegraphics[<size, angle, ...>]{<image>}
+    \caption{<text>} % legenda depois
+    \label{<text>}
+\end{figure}
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Referencia cruzada}
+    \begin{itemize}
+        \item O comando padrão para citar uma label é o \lstinline[style=myStyleLatex]!\ref{<>}!. Recomenda-se utilizar um padrão de nomenclatura dos rótulos, por exemplo, ``fig:teste'' para figuras.
+        \item O pacote \texttt{hyperref} oferece um suporte melhor para a citação com o comando \lstinline[style=myStyleLatex]!\autoref{<label>}!. Ele cria um link para a legenda permitindo que, no PDF resultante, pode-se clicar e ir à imagem.
+        \item O pacote \texttt{cleveref} também oferece esse suporte. Para citar uma imagem, utiliza-se \lstinline[style=myStyleLatex]!\cref{<label>}!.
+        \item \textbf{Para que os dois últimos pacotes funcionem, o comando \texttt{label} precisa aparecer depois de \texttt{caption}.}
+    \end{itemize}
+\end{frame}
+
+\section{Tamanho da imagem}
+\begin{frame}[fragile]
+    \frametitle{Tamanho}
+
+    \begin{itemize}
+        \item O tamanho é dado nas opções do comando \lstinline[style=myStyleLatex]!\includegraphics[<options>]{<image>}!.
+        \item Pode-se determinar \texttt{width} e/ou \texttt{height} proporcionalmente a alguma medida previamente estabelecida ou absolutamente expressada por uma unidade de medida (in, cm, mm); \texttt{scale} em número decimal com ponto; e, o \texttt{angle} em graus sem precisar determinar a unidade.
+        \item Exemplo: \lstinline[style=myStyleLatex]!\includegraphics[width={0.7\textwidth}]{<image>}!. Representa que a imagem vai ocupar 70\% da largura atribuida ao texto.
+    \end{itemize}
+
+\end{frame}
+
+
+\section{Referências}
+\begin{frame}[allowframebreaks]
+    \frametitle{Referências}
+    \nocite{*}
+    \printbibliography[keyword={inserirImagem}]
+\end{frame}
+
+
+\end{document}
