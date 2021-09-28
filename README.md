@@ -10,7 +10,7 @@ Repositório criado para manter arquivos com dicas básicas para utilização do
 - [x] Grandes classes do LaTeX.
 - [x] Explicação da estrutura do documento.
 - [x] Edição de texto.
-- [ ] Inserir imagens.
+- [x] Inserir imagens.
 - [ ] Inserir tabelas.
 - [ ] Inserir códigos.
 - [ ] Inserir equações.
