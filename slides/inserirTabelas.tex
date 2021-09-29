@@ -52,11 +52,20 @@
 \frame{\titlepage}
 
 \begin{frame}
-    \frametitle{Sumário}
-    \tableofcontents
+  \frametitle{Sumário}
+  \tableofcontents
+\end{frame}
+
+\section{Introdução}
+\begin{frame}
+  \frametitle{Introdução}
+
+  As tabelas são um ambiente que demanda uma atenção e um cuidado maior. Elas têm uma estrutura bastante rígida e é fácil de se perder quando tem muitas linhas. Por esse motivo, sugiro que utilize sites que gerem o código da tabela, como o \href{https://www.tablesgenerator.com/}{Tables Generator}. Entretanto, em casos de tabelas mais específicas, é válido conhecer pacotes e tratamentos que se adequarão de maneira mais apropriada à situação.
+
 \end{frame}
 
 \section{Tabular}
+
 
 \section{Tabularx}
 
@@ -67,12 +76,20 @@
 \section{Legenda e rótulo}
 
 \section{Lista de tabelas}
+\begin{frame}[fragile]
+  \frametitle{Lista de tabelas}
+
+  \begin{itemize}
+    \item O comando para gerar uma lista de tabelas é \lstinline[style=myStyleLatex]!\listoftables!.
+  \end{itemize}
+
+\end{frame}
 
 \section{Referências}
 \begin{frame}[allowframebreaks]
-    \frametitle{Referências}
-    \nocite{*}
-    \printbibliography[keyword={inserirTabela}]
+  \frametitle{Referências}
+  \nocite{*}
+  \printbibliography[keyword={inserirTabela}]
 \end{frame}
 
 
