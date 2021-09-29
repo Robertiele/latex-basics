@@ -63,7 +63,7 @@
 
     \begin{itemize}
         \item Basicamente para inserir uma imagem em png e jpg só precisa do pacote \texttt{graphicx}. Ele é equivalente ao pacote \texttt{graphics}, mas com mais funções.
-        \item O pacote \texttt{wrapfigure} serve se o objetivo for colocar uma figura em que o texto continua nos lados.
+        \item O pacote \texttt{wrapfig} serve se o objetivo for colocar uma figura em que o texto continua nos lados.
         \item O pacote \texttt{float}, pode auxiliar à determinar a posição exata da imagem.
         \item O pacote \texttt{svg} pode ser útil se o objetivo for adicionar uma imagem no formato svg.
     \end{itemize}
@@ -176,8 +176,25 @@
 
 \end{frame}
 
-\section{Figura no meio de texto}
+\section{Figura com texto ao lado}
+\begin{frame}[fragile]
+    \frametitle{Figura com texto ao lado}
 
+    \begin{itemize}
+        \item A estrutura do ambiente é a seguinte:
+              \begin{lstlisting}[style=myStyleLatex]
+            \begin{wrapfigure}{<pos box>}{<size box>}
+                <alignment>
+                \includegraphics[<size image>]{<image>}
+            \end{wrapfigure}
+        \end{lstlisting}
+        \item Em que a posição do ambiente pode ser \texttt{r} quando for alinhada à direita ou \texttt{l} quando for alinhada à esquerda.
+        \item O tamanho do ambiente em que a imagem vai ser inserida, pode ser descrita em unidades de medida ou proporcional.
+        \item O alinhamento pode ser \lstinline[style=myStyleLatex]!\centering,\raggedright,\raggedleft!
+        \item O tamanho da imagem pode ser descrita em unidades de medida ou proporcional.
+    \end{itemize}
+
+\end{frame}
 
 \section{Referências}
 \begin{frame}[allowframebreaks]
