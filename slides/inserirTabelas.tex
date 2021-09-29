@@ -1,0 +1,79 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{caption}
+\hypersetup{
+    final=true,
+    unicode=false,
+    pdftoolbar=true, 
+    pdfmenubar=true,
+    pdffitwindow=true, 
+    pdfstartview={FitW},  
+    pdftitle={Inserir Tabelas}, 
+    pdfauthor={Nightwind},
+    pdfkeywords={latex, dicas}, 
+    pdfnewwindow=true,
+    colorlinks=false,
+    linkcolor=red,
+    citecolor=green,
+    filecolor=cyan,
+    urlcolor=magenta
+}
+\usepackage[style=abnt]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}
+\usepackage{cleveref}
+\crefname{figure}{Figura}{Figuras}
+
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{svg}
+
+\usepackage{xcolor}
+
+\usepackage{listings}
+\input{setup_listings.tex}
+
+\usepackage{menukeys}
+
+
+\title{Inserir Tabelas}
+\author{Nightwind}
+\institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
+\logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents
+\end{frame}
+
+\section{Tabular}
+
+\section{Tabularx}
+
+\section{Longtable}
+
+\section{Formatação}
+
+\section{Legenda e rótulo}
+
+\section{Lista de tabelas}
+
+\section{Referências}
+\begin{frame}[allowframebreaks]
+    \frametitle{Referências}
+    \nocite{*}
+    \printbibliography[keyword={inserirTabela}]
+\end{frame}
+
+
+\end{document}
