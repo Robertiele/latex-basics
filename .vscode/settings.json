@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "arraybackslash",
         "backgroundcolor",
         "basicstyle",
         "breakatwhitespace",
@@ -9,6 +10,10 @@
         "colorbox",
         "darkslateblue",
         "deletekeywords",
+        "endfirsthead",
+        "endfoot",
+        "endhead",
+        "endlastfoot",
         "escapeinside",
         "extendedchars",
         "familydefault",
@@ -29,6 +34,7 @@
         "mygray",
         "mygreen",
         "mymauve",
+        "newcolumntype",
         "Nightwind",
         "numbersep",
         "numberstyle",
@@ -53,7 +59,8 @@
         "texlive",
         "ttdefault",
         "ttshape",
-        "urlcolor"
+        "urlcolor",
+        "xcolor"
     ],
     "cSpell.language": "en,en-US,de,de-DE,pt,pt-BR"
 }

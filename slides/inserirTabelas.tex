@@ -127,13 +127,13 @@
     \label{tab:Conteudo}
     \begin{tabular}[c]{c|c|m{5cm}}
       \firsthline
-      \multicolumn{2}{c}{Comando}           & Descrição                                                                                                                     \\ \hline
-      \multirow{6}{2cm}{Conteúdo da Tabela} & \texttt{\&}                                     & Separador de coluna.                                                        \\ \cline{2-3}
-                                            & \lstinline[style=myStyleLatex]!\\!              & Nova linha.                                                                 \\ \cline{2-3}
-                                            & \lstinline[style=myStyleLatex]!\newline!        & Nova linha.                                                                 \\ \cline{2-3}
+      \multicolumn{2}{c}{Comando}           & Descrição                                                                                            \\ \hline
+      \multirow{6}{2cm}{Conteúdo da Tabela} & \texttt{\&}            & Separador de coluna.                                                        \\ \cline{2-3}
+                                            & \lstinline[style=myStyleLatex]!\\! & Nova linha.                                                                 \\ \cline{2-3}
+                                            & \lstinline[style=myStyleLatex]!\newline! & Nova linha.                                                                 \\ \cline{2-3}
                                             & \lstinline[style=myStyleLatex]!\tabularnewline! & Nova linha (com pacote \texttt{array}).                                     \\ \cline{2-3}
-                                            & \lstinline[style=myStyleLatex]!\hline!          & Linha divisória entre linhas.                                               \\ \cline{2-3}
-                                            & \lstinline[style=myStyleLatex]!\cline{i-j}!     & Linha divisória entre linhas, iniciando na coluna \(i\) até a coluna \(j\). \\ \hline
+                                            & \lstinline[style=myStyleLatex]!\hline! & Linha divisória entre linhas.                                               \\ \cline{2-3}
+                                            & \lstinline[style=myStyleLatex]!\cline{i-j}! & Linha divisória entre linhas, iniciando na coluna \(i\) até a coluna \(j\). \\ \hline
     \end{tabular}
   \end{table}
 \end{frame}
@@ -187,8 +187,8 @@
 
 \begin{frame}[fragile]
   \frametitle{Tabularx: exemplo}
-\footnotesize
-\begin{lstlisting}[style=myStyleLatex]
+  \footnotesize
+  \begin{lstlisting}[style=myStyleLatex]
 \begin{tabularx}{\textwidth}{|| 
   >{\raggedright\arraybackslash}X | 
   >{\raggedleft\arraybackslash}X | 
@@ -210,8 +210,8 @@
   \frametitle{Longtable}
 
   \begin{itemize}
-    \item Este ambiente é dedicado para tabelas que ocupem mais de uma página. 
-    \item Não pode ser inserida dentro de um ambiente \lstinline[style=myStyleLatex]!\begin{table}...\end{table}!, já possui o controle de alinhamento, legenda e rótulo intrínseco. 
+    \item Este ambiente é dedicado para tabelas que ocupem mais de uma página.
+    \item Não pode ser inserida dentro de um ambiente \lstinline[style=myStyleLatex]!\begin{table}...\end{table}!, já possui o controle de alinhamento, legenda e rótulo intrínseco.
     \item Não funciona quando o padrão do documento está para duas colunas.
     \item Chamar o pacote \lstinline[style=myStyleLatex]!longtable!.
   \end{itemize}
@@ -235,7 +235,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Longtable: exemplo}
-\tiny
+  \tiny
   \begin{lstlisting}[style=myStyleLatex]
     \begin{longtable}[<pos>]{<cols>}
       \caption{<legenda>}
@@ -268,7 +268,11 @@
   \frametitle{Formatação: mesclagem de colunas}
 
   \begin{itemize}
-    \item 
+    \item Para mesclar as colunas, usar o comando \lstinline[style=myStyleLatex]!\multicolumn{<n cols>}{<aling>}{<content>}!
+    \item O comando é válido da coluna em que ele é chamado em diante.
+    \item Ocupa o número de colunas determinado no primeiro par de chaves.
+    \item Segue o alinhamento descrito no segundo par de chaves.
+    \item E, o conteúdo é o último campo a ser preenchido.
   \end{itemize}
 
 \end{frame}
@@ -276,15 +280,23 @@
   \frametitle{Formatação: mesclagem de linhas}
 
   \begin{itemize}
-    \item 
+    \item Para mesclar linhas, usar o comando \lstinline[style=myStyleLatex]!\multirow{<n rows>}{<widht col>}{<content>}!.
+    \item O comando é válido da linha em que ele é chamado em diante.
+    \item Ocupa o número de linhas determinado no primeiro par de chaves.
+    \item Determina a largura da coluna que a célula vai ficar.
+    \item E, o conteúdo é o último campo a ser preenchido.
   \end{itemize}
 
 \end{frame}
-\begin{frame}[fragile]
+\begin{frame}[fragile,allowframebreaks]
   \frametitle{Formatação: colorir células, colunas ou linhas}
 
   \begin{itemize}
-    \item 
+    \item Para esse comando poder ser usar, deve-se chamar o pacote \texttt{xcolor} na opção \texttt{table}.
+    \item Para alterar a cor de uma linha usar o comando \lstinline[style=myStyleLatex]!\rowcolor{<color>}! em que é só determinar o nome da cor.
+    \item Para alterar a cor de uma coluna, definir um novo tipo de coluna no preâmbulo, por exemplo, \lstinline[style=myStyleLatex]!\newcolumntype{g}[1]{>{\columncolor{#1}}c}!. O primeiro campo é o nome que deve ser chamado na tabela depois. O segundo contém a quantidade de campos que o novo tipo de coluna deve preencher. E o último é o padrão de coluna: alinhamento, cor, etc.
+    \item Para alterar a cor de uma única célula, utilizar o \lstinline[style=myStyleLatex]!\cellcolor{<color>}!.
+    \item Para colorir alternadamente as cores da tabela, utilizar: \lstinline[style=myStyleLatex]!\rowcolors{<row start>}{<color1>}{<color2}!. Colocar antes do ambiente de tabela. No primeiro campo, deve-se colocar a linha inicial, no segundo campo a cor 1 e a no terceiro campo a cor 2.
   \end{itemize}
 
 \end{frame}
@@ -292,7 +304,8 @@
   \frametitle{Formatação: editar as linhas}
 
   \begin{itemize}
-    \item 
+    \item O comando para alterar a espessura das linhas da tabela é \lstinline[style=myStyleLatex]!\setlength{\arrayrulewidth}{<size>}!. Se ele for inserido no preâmbulo, altera a espessura de todas as linhas. Se o objetivo for alterar a espessura de uma única tabela, deve-se colocar entre chaves como o comando e o ambiente da tabela.
+    \item Para alterar a cor da linha da tabela, utilizar \lstinline[style=myStyleLatex]!\arrayrulecolor{<color>}!. Se ele for inserido no preâmbulo, altera a espessura de todas as linhas. Se o objetivo for alterar a espessura de uma única tabela, deve-se colocar entre chaves como o comando e o ambiente da tabela.
   \end{itemize}
 
 \end{frame}
