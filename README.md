@@ -11,7 +11,7 @@ Repositório criado para manter arquivos com dicas básicas para utilização do
 - [x] Explicação da estrutura do documento.
 - [x] Edição de texto.
 - [x] Inserir imagens.
-- [ ] Inserir tabelas.
+- [x] Inserir tabelas.
 - [ ] Inserir códigos.
 - [ ] Inserir equações.
 - [ ] Citação e referências na ABNT.
