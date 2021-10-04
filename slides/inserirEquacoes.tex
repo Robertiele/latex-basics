@@ -12,14 +12,31 @@
         \tableofcontents
     \end{frame}
 
+\section{Pacotes}
+\begin{frame}
+    \frametitle{Pacotes}
+
+    Sugestão dos pacotes:
+    \begin{itemize}
+        \item \texttt{mathtools}: complementa, corrige e substitui o pacote \texttt{amsmath}. 
+        \item \texttt{xfrac}: para inserir frações inclinadas.
+        \item \texttt{subtack}: para limites com mais de uma linha. 
+        \item \texttt{amsfonts}: para ter acesso a mais fontes matemáticas (e.g. Fraktur, Blackboard bold).
+        \item \texttt{mathrsfs}: para ter acesso a mais fontes matemáticas (e.g. Script).
+    \end{itemize}
+
+\end{frame}
+
+
 \section{Ambientes}
 \begin{frame}[fragile]
     \frametitle{Ambientes}
+    Os ambientes de equações no \LaTeX são:
 
     \begin{table}
         \caption{Ambientes para equações.}
         \label{tab:Ambientes}
-        \begin{tabular}{p{4.5cm}cr}
+        \begin{tabular}{M{4.5cm}cl}
             Comando & Apresentação & Numerada \\ \hline
             \lstinline[style=myStyleLatex]!\(...\)! & corpo de texto & não \\ \hline
             \lstinline[style=myStyleLatex]!$...$! & corpo de texto & não \\ \hline
@@ -27,15 +44,231 @@
             \lstinline[style=myStyleLatex]!\begin{equation}... \end{equation}! & em destaque & sim \\ \hline
         \end{tabular}
     \end{table}
+    Sendo que somente o último pode receber o comando \lstinline[style=myStyleLatex]!\label{<text>}! pois é o único numerado.
 
 \end{frame}
+
+
 \subsection{Alinhamento}
-\section{Pacotes}
+\begin{frame}[fragile,allowframebreaks]
+    \frametitle{Ambientes: alinhamento}
+
+    \begin{itemize}
+        \item Existem ambientes específicos para gerarem equações rigidamente alinhadas. Ou para equações que ocupem mais que uma linha. São eles:
+        \begin{itemize}
+            \item \lstinline[style=myStyleLatex]!\begin{split}...\end{split}!: só pode ser chamado dentro do ambiente \texttt{equation}. Ele possui um nível obrigatório de alinhamento. E infinitas linhas. Toda a equação será numerada uma única vez.
+            \item \lstinline[style=myStyleLatex]!\begin{align}...\end{align}!: substitui o ambiente \texttt{equation}. Possui infinitos níveis de alinhamento. Cada linha da equação é numerada individualmente, consequentemente, cada linha pode ser referenciada através do comando \texttt{label}.
+            \item \lstinline[style=myStyleLatex]!\begin{gather}...\end{gather}!: substitui o ambiente \texttt{equation}. Centraliza todas as equações citadas no ambiente. Não possui nenhum nível de alinhamento. Cada linha da equação é numerada individualmente, consequentemente, cada linha pode ser referenciada através do comando \texttt{label}.
+            \item \lstinline[style=myStyleLatex]!\begin{multiline}...\end{multiline}!: substitui o ambiente \texttt{equation}. Permite a quebra de linha, fazendo com que a equação ocupe duas linhas, mas não dê a impressão que é mais de uma equação. 
+        \end{itemize} 
+        \item Em todos os ambiente acima descritos (exceto \texttt{split}) é só adicionar um * depois do comando, por exemplo, \texttt{align*}, \texttt{gather*}, \texttt{multiline*}, para que a numeração seja desconsiderada e não exibida. Portanto, não se pode referenciar esse tipo de ambiente porque não tem contador.  
+    \end{itemize}
+
+\end{frame}
+
 \section{Símbolos}
+\begin{frame}[fragile]
+    \frametitle{Símbolos Básicos}
+
+    \begin{table}
+        \begin{tabular}{O{1.5cm}l}
+            Símbolo & Comando \\ \hline
+            \(+\) & \lstinline[style=myStyleLatex]!+! \\ \hline
+            \(-\) & \lstinline[style=myStyleLatex]!-! \\ \hline
+            \(=\) & \lstinline[style=myStyleLatex]!=! \\ \hline
+            \(\times \) & \lstinline[style=myStyleLatex]!\times ! \\ \hline
+            \(\div \) & \lstinline[style=myStyleLatex]!\div ! \\ \hline
+            \(\neq \) & \lstinline[style=myStyleLatex]!\neq ! \\ \hline
+            \(\simeq \) & \lstinline[style=myStyleLatex]!\simeq ! \\ \hline
+            \(\pm \) & \lstinline[style=myStyleLatex]!\pm ! \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Símbolos Relacionais}
+
+    \begin{table}
+        \begin{tabular}{O{1.5cm}l}
+            Símbolo & Comando \\ \hline
+            \(<\) & \lstinline[style=myStyleLatex]!<! \\ \hline
+            \(>\) & \lstinline[style=myStyleLatex]!>! \\ \hline
+            \(\leq\) & \lstinline[style=myStyleLatex]!\leq! \\ \hline
+            \(\geq \) & \lstinline[style=myStyleLatex]!\geq! \\ \hline
+            \(\) & \lstinline[style=myStyleLatex]!! \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Setas}
+
+    \begin{table}
+        \begin{tabular}{O{1.5cm}l}
+            Símbolo & Comando \\ \hline
+            \(\rightarrow  \) & \lstinline[style=myStyleLatex]!\rightarrow ! \\ \hline
+            \(\leftarrow \) & \lstinline[style=myStyleLatex]!\leftarrow ! \\ \hline
+            \(\Rightarrow \) & \lstinline[style=myStyleLatex]!\Rightarrow ! \\ \hline
+            \(\Leftarrow  \) & \lstinline[style=myStyleLatex]!\Leftarrow ! \\ \hline
+            \(\longmapsto \) & \lstinline[style=myStyleLatex]!\longmapsto ! \\ \hline
+            \(\uparrow \) & \lstinline[style=myStyleLatex]!\uparrow ! \\ \hline
+            \(\downarrow \) & \lstinline[style=myStyleLatex]!\downarrow ! \\ \hline
+            \(\Uparrow \) & \lstinline[style=myStyleLatex]!\Uparrow ! \\ \hline
+            \(\Downarrow \) & \lstinline[style=myStyleLatex]!\Downarrow ! \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Letras gregas}
+\tiny
+    \begin{table}
+        \begin{tabular}{O{1.5cm}l||O{1.5cm}l}
+            Símbolo & Comando & Símbolo & Comando \\ \hline
+            \(\alpha \) & \lstinline[style=myStyleLatex]!\alpha ! & & \\ \hline
+            \(\beta \) & \lstinline[style=myStyleLatex]!\beta ! & & \\ \hline
+            \(\gamma \) & \lstinline[style=myStyleLatex]!\gamma ! & \(\Gamma\) & \lstinline[style=myStyleLatex]!\Gamma !\\ \hline
+            \(\delta \) & \lstinline[style=myStyleLatex]!\delta ! & \(\Delta \) & \lstinline[style=myStyleLatex]!\Delta !\\ \hline
+            \(\epsilon \) & \lstinline[style=myStyleLatex]!\epsilon ! & & \\ \hline
+            \(\varepsilon \) & \lstinline[style=myStyleLatex]!\varepsilon ! & & \\ \hline
+            \(\zeta \) & \lstinline[style=myStyleLatex]!\zeta ! & & \\ \hline
+            \(\eta \) & \lstinline[style=myStyleLatex]!\eta ! & & \\ \hline
+            \(\theta \) & \lstinline[style=myStyleLatex]!\theta ! & \(\Theta \) & \lstinline[style=myStyleLatex]!\Theta ! \\ \hline
+            \(\iota \) & \lstinline[style=myStyleLatex]!\iota ! & & \\ \hline
+            \(\kappa \) & \lstinline[style=myStyleLatex]!\kappa ! & & \\ \hline
+            \(\lambda \) & \lstinline[style=myStyleLatex]!\lambda ! & \(\Lambda \) & \lstinline[style=myStyleLatex]!\Lambda ! \\ \hline
+            \(\mu \) & \lstinline[style=myStyleLatex]!\mu ! & & \\ \hline
+            \(\nu \) & \lstinline[style=myStyleLatex]!\nu ! & & \\ \hline
+            \(\xi \) & \lstinline[style=myStyleLatex]!\xi ! & \(\Xi \) & \lstinline[style=myStyleLatex]!\Xi ! \\ \hline
+            \(\pi \) & \lstinline[style=myStyleLatex]!\pi ! & \(\Pi \) & \lstinline[style=myStyleLatex]!\Pi ! \\ \hline
+            \(\varpi \) & \lstinline[style=myStyleLatex]!\varpi ! & & \\ \hline
+            \(\rho \) & \lstinline[style=myStyleLatex]!\rho ! & & \\ \hline
+            \(\varrho \) & \lstinline[style=myStyleLatex]!\varrho ! & & \\ \hline
+            \(\sigma \) & \lstinline[style=myStyleLatex]!\sigma ! & \(\Sigma \) & \lstinline[style=myStyleLatex]!\Sigma ! \\ \hline
+            \(\varsigma \) & \lstinline[style=myStyleLatex]!\varsigma ! & & \\ \hline
+            \(\tau \) & \lstinline[style=myStyleLatex]!\tau ! & & \\ \hline
+            \(\upsilon \) & \lstinline[style=myStyleLatex]!\upsilon ! & \(\Upsilon \) & \lstinline[style=myStyleLatex]!\Upsilon ! \\ \hline
+            \(\phi \) & \lstinline[style=myStyleLatex]!\phi ! & \(\Phi \) & \lstinline[style=myStyleLatex]!\Phi ! \\ \hline
+            \(\varphi \) & \lstinline[style=myStyleLatex]!\varphi ! & & \\ \hline
+            \(\chi \) & \lstinline[style=myStyleLatex]!\chi ! & & \\ \hline
+            \(\psi \) & \lstinline[style=myStyleLatex]!\psi ! & \(\Psi \) & \lstinline[style=myStyleLatex]!\Psi ! \\ \hline
+            \(\omega \) & \lstinline[style=myStyleLatex]!\omega ! & \(\Omega \) & \lstinline[style=myStyleLatex]!\Omega ! \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Acentos}
+
+    \begin{table}
+        \begin{tabular}{O{1.5cm}l}
+            Símbolo & Comando \\ \hline
+            \(\hat{a} \) & \lstinline[style=myStyleLatex]!\hat{a} ! \\ \hline
+            \(\dot{a} \) & \lstinline[style=myStyleLatex]!\dot{a} ! \\ \hline
+            \(\check{a} \) & \lstinline[style=myStyleLatex]!\check{a} ! \\ \hline
+            \(\ddot{a} \) & \lstinline[style=myStyleLatex]!\ddot{a} ! \\ \hline
+            \(\tilde{a} \) & \lstinline[style=myStyleLatex]!\tilde{a} ! \\ \hline
+            \(\breve{a} \) & \lstinline[style=myStyleLatex]!\breve{a} ! \\ \hline
+            \(\acute{a} \) & \lstinline[style=myStyleLatex]!\acute{a} ! \\ \hline
+            \(\bar{a} \) & \lstinline[style=myStyleLatex]!\bar{a} ! \\ \hline
+            \(\grave{a} \) & \lstinline[style=myStyleLatex]!\grave{a} ! \\ \hline
+            \(\vec{a} \) & \lstinline[style=myStyleLatex]!\vec{a} ! \\ \hline            
+        \end{tabular}
+    \end{table}
+
+\end{frame}
 \section{Delimitadores}
+\begin{frame}[fragile]
+    \frametitle{Delimitadores}
+
+    \begin{table}
+        \begin{tabular}{O{1.5cm}l}
+            Delimitador & Comando \\ \hline
+            \(\left\lvert a\right\rvert  \) & \lstinline[style=myStyleLatex]!\left\lvert a\right\rvert ! \\ \hline
+            \(\left\lVert a\right\rVert \) & \lstinline[style=myStyleLatex]!\left\lVert a\right\rVert ! \\ \hline
+            \(\left(a\right)  \) & \lstinline[style=myStyleLatex]!\left(a\right) ! \\ \hline
+            \(\left[a\right] \) & \lstinline[style=myStyleLatex]!\left[a\right] ! \\ \hline
+            \(\left\{a\right\} \) & \lstinline[style=myStyleLatex]!\left\{a\right\} ! \\ \hline
+            \(\left\langle a\right\rangle \) & \lstinline[style=myStyleLatex]!\left\langle a\right\rangle ! \\ \hline
+            \(\left\lfloor a\right\rfloor \) & \lstinline[style=myStyleLatex]!\left\lfloor a\right\rfloor ! \\ \hline
+            \(\left\lceil a\right\rceil \) & \lstinline[style=myStyleLatex]!\left\lceil a\right\rceil ! \\ \hline
+            \(\left\lfloor a\right\rceil \) & \lstinline[style=myStyleLatex]!\left\lfloor a\right\rceil ! \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Delimitadores}
+
+    \begin{itemize}
+        \item Os delimitadores acima expostos são substituíveis por seus equivalentes sem necessitar \lstinline[style=myStyleLatex]!\left...\right! quando o conteúdo interno não for maior que uma linha, por exemplo.
+        \item Caso o intuito seja adaptar manualmente o tamanho do delimitador de acordo com o conteúdo é só substituir \lstinline[style=myStyleLatex]!\left...\right! por: \lstinline[style=myStyleLatex]!\big( \Big( \bigg( \Bigg(!.
+        \[\big( \Big( \bigg( \Bigg(\]
+    \end{itemize}
+
+\end{frame}
 \section{Operadores}
-\section{Alfabetos}
+\begin{frame}[fragile]
+    \frametitle{Operadores}
+
+    \begin{table}
+        \begin{tabular}{O{1.5cm}l}
+            Operador & Comando \\ \hline
+            \(\arccos \) & \lstinline[style=myStyleLatex]!\arccos ! \\ \hline
+            \(\cos \) & \lstinline[style=myStyleLatex]!\cos ! \\ \hline
+            \(\arcsin \) & \lstinline[style=myStyleLatex]!\sin ! \\ \hline
+            \(\tan \) & \lstinline[style=myStyleLatex]!\arctan ! \\ \hline
+            \(\sec \) & \lstinline[style=myStyleLatex]!\sec ! \\ \hline
+            \(\cosh \) & \lstinline[style=myStyleLatex]!\cosh ! \\ \hline
+            \(\sinh \) & \lstinline[style=myStyleLatex]!\sinh ! \\ \hline
+            \(\lim \) & \lstinline[style=myStyleLatex]!\lim ! \\ \hline
+            \(\ln \) & \lstinline[style=myStyleLatex]!\ln ! \\ \hline
+            \(\lg \) & \lstinline[style=myStyleLatex]!\lg ! \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
 \section{Fontes}
+\begin{frame}[fragile]
+    \frametitle{Fontes}
+
+    \begin{table}
+        \begin{tabular}{rlcc}
+            Letra & Comando & Só para & Pacote\\ \hline
+            \(\mathcal{AB} \) & \lstinline[style=myStyleLatex]!\mathcal{AB} ! & Maiúsculas & \\ \hline
+            \(\mathbb{AB} \) & \lstinline[style=myStyleLatex]!\mathbb{AB} ! & Maiúsculas & \texttt{amssymb} \\ \hline
+            \(\mathscr{AB}\) & \lstinline[style=myStyleLatex]!\mathscr{AB}! & Maiúsculas & \texttt{mathrsfs} \\ \hline
+            \(\mathfrak{AaBb} \) & \lstinline[style=myStyleLatex]!\mathfrak{AaBb} ! & & \texttt{amssymb}\\ \hline
+            \(\mathsf{AaBb} \) & \lstinline[style=myStyleLatex]!\mathsf{AaBb} ! & & \\ \hline
+            \(\mathrm{AaBb} \) & \lstinline[style=myStyleLatex]!\mathrm{AaBb} ! & & \\ \hline
+            \(\mathbf{AaBb} \) & \lstinline[style=myStyleLatex]!\mathbf{AaBb} ! & & \\ \hline
+            \(\mathit{AaBb}\) & \lstinline[style=myStyleLatex]!\mathit{AaBb} ! & & \\ \hline            
+        \end{tabular}
+    \end{table}
+
+\end{frame}
 \section{Novos comandos}
+\begin{frame}[fragile]
+    \frametitle{Novos comando}
+
+    \begin{itemize}
+        \item Determinadas partes nas equações podem se tornar repetitivas e inconvenientes de serem repetidas. 
+        \item Por isso, o \LaTeX oferece um meio de tornar a escrita mais simplificada.
+        \item \lstinline[style=myStyleLatex]!\newcommand{<cmd>}[<args>][<def>]{<definition>}!
+    \end{itemize}
+
+\end{frame}
+
 \section{Rótulo}
+
+\begin{frame}{allowframebreaks}
+    \frametitle{Referências}
+    \nocite{*}
+    \printbibliography[keyword={inserirEquacao}]
+\end{frame}
 \end{document}
