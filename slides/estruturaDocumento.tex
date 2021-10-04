@@ -1,51 +1,9 @@
-\documentclass{beamer}
+\documentclass[brazilian]{beamer}
 
-\usetheme{CambridgeUS}
-\usecolortheme{beaver}
-
-\usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
-\usepackage{caption}
-\hypersetup{
-    final=true,
-    % bookmarks=true,
-    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
-    pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=true,     % window fit to page when opened
-    pdfstartview={FitW},    % fits the width of the page to the window
-    pdftitle={Estrutura de um documento \LaTeX},    % title
-    pdfauthor={Nightwind},     % author
-    % pdfsubject={Subject},   % subject of the document
-    % pdfcreator={Creator},   % creator of the document
-    % pdfproducer={Producer}, % producer of the document
-    pdfkeywords={latex, dicas}, % list of keywords
-    pdfnewwindow=true,      % links in new PDF window
-    colorlinks=false,       % false: boxed links; true: colored links
-    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
-    citecolor=green,        % color of links to bibliography
-    filecolor=cyan,         % color of file links
-    urlcolor=magenta        % color of external links
-}
-\usepackage[style=abnt]{biblatex}
-\addbibresource{references.bib}
-\usepackage{csquotes}
-
-\usepackage{tabularx}
-
-\usepackage{xcolor}
-
-\usepackage{listings}
-\input{setup_listings.tex}
-
-\usepackage{menukeys}
-
+\input{preambulo.tex}
 
 \title{Estrutura de um documento \LaTeX}
-\author{Nightwind}
-\institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
-\logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
-\date{\today}
+
 
 \begin{document}
 
@@ -60,10 +18,10 @@
 \section{Estrutura de ambientes do código}
 \begin{frame}[fragile]
     \frametitle{Contexto e introdução}
-
+    
     \begin{itemize}
         \item O \LaTeX foi desenvolvido para que houvesse maior ``facilidade'' de gerar documentos científicos. Sem uma estruturação de comandos bem definida, o código não funciona e os erros se tornam mais frequentes do que o normal.
-        \item Para chamar um ``comando'' do \LaTeX, utiliza-se a barra: \lstinline!\!. 
+        \item Para chamar um ``comando'' do \LaTeX, utiliza-se a barra: \lstinline!\!.
         \item A maioria dos ``comandos'' é seguido de chaves: \lstinline!{}!, o preenchimento delas é obrigatório e varia de acordo com o ``comando''.
         \item Alguns ``comandos'' possuem o compos para preenchimento opcional. Eles são delimitados por colchetes: \lstinline![]!. Eles servem para escolher opções, configurar o pacote que está sendo chamado, apresentar uma versão reduzida do texto que será impresso (título, seção, instituição).
     \end{itemize}
@@ -72,7 +30,7 @@
 \subsection{Formação e função}
 \begin{frame}[fragile]
     \frametitle{Formação e função}
-
+    
     \begin{lstlisting}[style = myStyleLatex]
 \documentclass[options]{style}
 \usepackage[options]{package}
@@ -92,81 +50,78 @@
 \section{Estrutura geral}
 \begin{frame}[fragile]
     \frametitle{Estrutura geral}
-
+    
     \begin{itemize}
-        \item O documento \textit{.tex} é formado por, no mínimo, duas partes: 
-        \begin{itemize}
-            \item Preâmbulo: onde se faz a declaração dos parâmetros e a conexão com os pacotes.
-            \item Documento: delimitado por \lstinline[style=myStyleLatex]!\begin{document}\end{document}!, é o ambiente responsável por receber o conteúdo do documento final.
-        \end{itemize}
+        \item O documento \textit{.tex} é formado por, no mínimo, duas partes:
+              \begin{itemize}
+                  \item Preâmbulo: onde se faz a declaração dos parâmetros e a conexão com os pacotes.
+                  \item Documento: delimitado por \lstinline[style=myStyleLatex]!\begin{document}\end{document}!, é o ambiente responsável por receber o conteúdo do documento final.
+              \end{itemize}
     \end{itemize}
-
+    
 \end{frame}
 \subsection{Preâmbulo}
 \begin{frame}[fragile]
     \frametitle{Preâmbulo}
-
+    
     \begin{itemize}
         \item Todos os pacotes utilizados precisam ser chamados no preâmbulo.
         \item Ele começa no \lstinline[style=myStyleLatex]!\documentclass[options]{style}! e termina no \lstinline[style=myStyleLatex]!\begin{document}!.
         \item É onde se altera o cabeçalho e o rodapé das folhas.
         \item Os comandos \lstinline[style=myStyleLatex]!\renewcommand{command}[arguments][default]{definition}! e \lstinline[style=myStyleLatex]!\newcommand{command}[arguments][default]{definition}! que são listados no preâmbulo, são válidos em todo o documento.
-        \begin{itemize}
-            \item Se fosse colocado no início do ambiente, ele mudaria somente aquele ambiente.
-            \item Exemplo: ambiente de listas, tem os contadores ou os ícones alterados através de \lstinline[style=myStyleLatex]!\renewcommand{command}[arguments][default]{definition}!.
-        \end{itemize}
+              \begin{itemize}
+                  \item Se fosse colocado no início do ambiente, ele mudaria somente aquele ambiente.
+                  \item Exemplo: ambiente de listas, tem os contadores ou os ícones alterados através de \lstinline[style=myStyleLatex]!\renewcommand{command}[arguments][default]{definition}!.
+              \end{itemize}
     \end{itemize}
 \end{frame}
 \subsection{Documento}
 \begin{frame}[fragile]
     \frametitle{Documento}
-
+    
     \begin{itemize}
         \item É o ambiente que recebe o conteúdo do documento.
         \item Nele constarão todas as divisões em capítulos, seções, subseções, parágrafos, etc.
         \item No geral, para texto corrido não há necessidade de muitos cuidados, ele é muito mais simples de se controlar do que editores de texto comuns.
         \item Alguns destaques que o texto pode receber é com relação ao:
-        \begin{itemize}
-            \item negrito: \lstinline[style=myStyleLatex]!\textbf{text}!
-            \item itálico: \lstinline[style=myStyleLatex]!\textit{text}!
-        \end{itemize}
+              \begin{itemize}
+                  \item negrito: \lstinline[style=myStyleLatex]!\textbf{text}!
+                  \item itálico: \lstinline[style=myStyleLatex]!\textit{text}!
+              \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Ambientes}
-
+    
     \begin{itemize}
         \item É o ambiente que mais vai receber ``subambientes''. Cada lista, cada equação, cada slide, cada tabela e imagem. Todos estes tem seus próprios ambientes e demandam tratamentos especiais.
-        \item Eles são delimitados por: 
-\begin{lstlisting}[style=myStyleLatex]
+        \item Eles são delimitados por:
+              \begin{lstlisting}[style=myStyleLatex]
 \begin{ambiente}
     (*$\vdots$*)
 \end{ambiente}
 \end{lstlisting}
     \end{itemize}
-
+    
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Títulos}
-
+    
     \begin{itemize}
         \item A estrutura de títulos varia de acordo com a classe:
-        \begin{itemize}
-            \item Para \lstinline[style=myStyleLatex]!article, exam, beamer!, hierarquia é: \lstinline[style=myStyleLatex]!part, section, subsection, subsubsection, paragraph, subparagraph!
-            \item Para \lstinline[style=myStyleLatex]!book, report!, há também o comando \lstinline[style=myStyleLatex]!\chapter{text}! antes de \lstinline[style=myStyleLatex]!\section{text}!
-        \end{itemize}
+              \begin{itemize}
+                  \item Para \lstinline[style=myStyleLatex]!article, exam, beamer!, hierarquia é: \lstinline[style=myStyleLatex]!part, section, subsection, subsubsection, paragraph, subparagraph!
+                  \item Para \lstinline[style=myStyleLatex]!book, report!, há também o comando \lstinline[style=myStyleLatex]!\chapter{text}! antes de \lstinline[style=myStyleLatex]!\section{text}!
+              \end{itemize}
     \end{itemize}
-
+    
 \end{frame}
 
-\section{Referências}
 \begin{frame}[allowframebreaks]
     \frametitle{Referências}
     \nocite{*}
     \printbibliography[keyword={structure}]
 \end{frame}
-
-
 \end{document}

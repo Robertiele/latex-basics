@@ -1,47 +1,8 @@
-\documentclass{beamer}
+\documentclass[brazilian]{beamer}
 
-\usetheme{CambridgeUS}
-\usecolortheme{beaver}
-
-\usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
-\usepackage{caption}
-\hypersetup{
-    final=true,
-    unicode=false,
-    pdftoolbar=true, 
-    pdfmenubar=true,
-    pdffitwindow=true, 
-    pdfstartview={FitW},  
-    pdftitle={Edição de Texto}, 
-    pdfauthor={Nightwind},
-    pdfkeywords={latex, dicas}, 
-    pdfnewwindow=true,
-    colorlinks=false,
-    linkcolor=red,
-    citecolor=green,
-    filecolor=cyan,
-    urlcolor=magenta
-}
-\usepackage[style=abnt]{biblatex}
-\addbibresource{references.bib}
-\usepackage{csquotes}
-
-\usepackage{tabularx}
-
-\usepackage{xcolor}
-
-\usepackage{listings}
-\input{setup_listings.tex}
-
-\usepackage{menukeys}
-
+\input{preambulo.tex}
 
 \title{Edição de Texto}
-\author{Nightwind}
-\institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
-\logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
-\date{\today}
 
 \begin{document}
 
@@ -58,7 +19,7 @@
 
     \begin{itemize}
         \item O \LaTeX tem como padrão a fonte ``Computer Modern''. Essa fonte pode assumir três padrões: \textit{serif}, \textit{sans serif} e \textit{monospaced}.
-        \item O padrão \textit{serif} é selecionado automaticamente. 
+        \item O padrão \textit{serif} é selecionado automaticamente.
         \item Para mudar o documento inteiro, utiliza-se \lstinline[style=myStyleLatex]!\renewcommand{\familydefault}{<familia>}!
         \item O campo ``família'' pode assumir: \lstinline[style=myStyleLatex]!\rmdefault, \sfdefault, \ttdefault!
         \item Dentro de um ambiente, pode utilizar os comandos \lstinline[style=myStyleLatex]!\rmfamily, \sffamily, \ttfamily! para alterar o tipo de fonte naquela parte do documento.
@@ -70,7 +31,7 @@
     \frametitle{Fontes instaladas no PC}
 
     \begin{itemize}
-        \item Utilizar o pacote: \lstinline[style=myStyleLatex]!\usepackage{fontspec}!. 
+        \item Utilizar o pacote: \lstinline[style=myStyleLatex]!\usepackage{fontspec}!.
         \item Avaliar se a fonte garante todas as edições: negrito, itálico, etc.
         \item Para utilizar o pacote, precisa utilizar o LuaLaTeX para compilar.
         \item Se colocar o comando \lstinline[style=myStyleLatex]!\setmainfont{<nome da fonte>}! no preâmbulo para todo o documento ou no ambiente que se deseja utilizar.
@@ -82,21 +43,21 @@
 \section{Negrito, itálico, sublinhado e riscado}
 \begin{frame}[fragile]
     \frametitle{Declaração em bloco}
-
+    \small
     \begin{table}[h]
-        \begin{tabular}{c|r|l}
-            Nome & Comando & Resultado \\ \hline 
-            Negrito & \lstinline[style=myStyleLatex]!\textbf{Teste 123}! & \textbf{Teste 123} \\ \hline 
-            Normal & \lstinline[style=myStyleLatex]!\textmd{Teste 123}! & \textmd{Teste 123} \\ \hline 
-            Itálico & \lstinline[style=myStyleLatex]!\textit{Teste 123}! & \textit{Teste 123} \\ \hline 
-            Inclinado & \lstinline[style=myStyleLatex]!\textsl{Teste 123}! & \textsl{Teste 123} \\ \hline
-            Sublinhado & \lstinline[style=myStyleLatex]!\underline{Teste 123}! & \underline{Teste 123} \\ \hline 
-            Maiúsculas pequenas & \lstinline[style=myStyleLatex]!\textsc{Teste 123}! & \textsc{Teste 123} \\ \hline
-            Monoespaçada & \lstinline[style=myStyleLatex]!\texttt{Teste 123}! & \texttt{Teste 123} \\ \hline
-            Maiúsculas & \lstinline[style=myStyleLatex]!\uppercase{Teste 123}! & \uppercase{Teste 123} \\ \hline 
-            Minúsculas & \lstinline[style=myStyleLatex]!\lowercase{Teste 123}! & \lowercase{Teste 123} \\ \hline 
-            Sobreescrito & \lstinline[style=myStyleLatex]!Teste \textsuperscript{123}! & Teste \textsuperscript{123} \\ \hline
-            Subscrito & \lstinline[style=myStyleLatex]!Teste \textsubscript{123}! & Teste \textsubscript{123} \\ \hline
+        \begin{tabular}{m{2.5cm}|r|l}
+            Nome                & Comando                 & Resultado                   \\ \hline
+            Negrito             & \lstinline[style=myStyleLatex]!\textbf{Teste 123}!  & \textbf{Teste 123}          \\ \hline
+            Normal              & \lstinline[style=myStyleLatex]!\textmd{Teste 123}!  & \textmd{Teste 123}          \\ \hline
+            Itálico             & \lstinline[style=myStyleLatex]!\textit{Teste 123}!  & \textit{Teste 123}          \\ \hline
+            Inclinado           & \lstinline[style=myStyleLatex]!\textsl{Teste 123}!  & \textsl{Teste 123}          \\ \hline
+            Sublinhado          & \lstinline[style=myStyleLatex]!\underline{Teste 123}! & \underline{Teste 123}       \\ \hline
+            Maiúsculas pequenas & \lstinline[style=myStyleLatex]!\textsc{Teste 123}! & \textsc{Teste 123}          \\ \hline
+            Monoespaçada        & \lstinline[style=myStyleLatex]!\texttt{Teste 123}! & \texttt{Teste 123}          \\ \hline
+            Maiúsculas          & \lstinline[style=myStyleLatex]!\uppercase{Teste 123}! & \uppercase{Teste 123}       \\ \hline
+            Minúsculas          & \lstinline[style=myStyleLatex]!\lowercase{Teste 123}! & \lowercase{Teste 123}       \\ \hline
+            Sobreescrito        & \lstinline[style=myStyleLatex]!Teste \textsuperscript{123}! & Teste \textsuperscript{123} \\ \hline
+            Subscrito           & \lstinline[style=myStyleLatex]!Teste \textsubscript{123}! & Teste \textsubscript{123}   \\ \hline
         \end{tabular}
     \end{table}
 
@@ -107,13 +68,13 @@
 
     \begin{table}[h]
         \begin{tabular}{c|r}
-            Nome & Comando \\ \hline 
-            Negrito & \lstinline[style=myStyleLatex]!\bfseries! \\ \hline 
-            Normal & \lstinline[style=myStyleLatex]!\mdseries! \\ \hline 
-            Itálico & \lstinline[style=myStyleLatex]!\itshape! \\ \hline 
-            Inclinado & \lstinline[style=myStyleLatex]!\slshape! \\ \hline
+            Nome                & Comando                 \\ \hline
+            Negrito             & \lstinline[style=myStyleLatex]!\bfseries! \\ \hline
+            Normal              & \lstinline[style=myStyleLatex]!\mdseries! \\ \hline
+            Itálico             & \lstinline[style=myStyleLatex]!\itshape! \\ \hline
+            Inclinado           & \lstinline[style=myStyleLatex]!\slshape! \\ \hline
             Maiúsculas pequenas & \lstinline[style=myStyleLatex]!\scshape! \\ \hline
-            Monoespaçada & \lstinline[style=myStyleLatex]!\ttshape! \\ \hline
+            Monoespaçada        & \lstinline[style=myStyleLatex]!\ttshape! \\ \hline
         \end{tabular}
     \end{table}
 
@@ -126,7 +87,7 @@
 
     \begin{itemize}
         \item O tamanho padrão é 10pt.
-        \item Outros dois tamanhos podem ser escolhidos nas opções do comando inicial do \LaTeX. 
+        \item Outros dois tamanhos podem ser escolhidos nas opções do comando inicial do \LaTeX.
         \item Pode assumir os valores de 11pt ou 12pt.
     \end{itemize}
 
@@ -136,22 +97,22 @@
     \frametitle{Variações de Tamanhos}
 
     \begin{itemize}
-        \item As alterações de tamanho são relativas ao tamanho inicial. 
+        \item As alterações de tamanho são relativas ao tamanho inicial.
         \item Se for definição em bloco, utiliza-se o par de chaves. Se for definição global, só declarar o comando (sem chaves) dentro do ambiente.
     \end{itemize}
 
     \begin{table}[h]
         \begin{tabular}{r|l}
-            Comando & Resultado \\ \hline 
-            \lstinline[style=myStyleLatex]!\tiny{Teste}! & \tiny{Teste} \\ \hline 
-            \lstinline[style=myStyleLatex]!\scriptsize{Teste}! & \scriptsize{Teste} \\ \hline 
-            \lstinline[style=myStyleLatex]!\small{Teste}! & \small{Teste} \\ \hline 
-            \lstinline[style=myStyleLatex]!\normalsize{Teste}! & \normalsize{Teste} \\ \hline 
-            \lstinline[style=myStyleLatex]!\large{Teste}! & \large{Teste} \\ \hline 
-            \lstinline[style=myStyleLatex]!\Large{Teste}! & \Large{Teste} \\ \hline 
-            \lstinline[style=myStyleLatex]!\LARGE{Teste}! & \LARGE{Teste} \\ \hline
-            \lstinline[style=myStyleLatex]!\huge{Teste}! & \huge{Teste} \\ \hline
-            \lstinline[style=myStyleLatex]!\Huge{Teste}! & \Huge{Teste} \\ \hline   
+            Comando                 & Resultado          \\ \hline
+            \lstinline[style=myStyleLatex]!\tiny{Teste}! & \tiny{Teste}       \\ \hline
+            \lstinline[style=myStyleLatex]!\scriptsize{Teste}! & \scriptsize{Teste} \\ \hline
+            \lstinline[style=myStyleLatex]!\small{Teste}! & \small{Teste}      \\ \hline
+            \lstinline[style=myStyleLatex]!\normalsize{Teste}! & \normalsize{Teste} \\ \hline
+            \lstinline[style=myStyleLatex]!\large{Teste}! & \large{Teste}      \\ \hline
+            \lstinline[style=myStyleLatex]!\Large{Teste}! & \Large{Teste}      \\ \hline
+            \lstinline[style=myStyleLatex]!\LARGE{Teste}! & \LARGE{Teste}      \\ \hline
+            \lstinline[style=myStyleLatex]!\huge{Teste}! & \huge{Teste}       \\ \hline
+            \lstinline[style=myStyleLatex]!\Huge{Teste}! & \Huge{Teste}       \\ \hline
         \end{tabular}
     \end{table}
 
@@ -173,7 +134,7 @@
     \begin{itemize}
         \item Para utilizar cores, precisamos utilizar um pacote que reconheça cores. Por exemplo: \lstinline[style=myStyleLatex]!\usepackage{xcolor}!
         \item O pacote possui um nome de cores básicas para ser usadas. Outros nomes podem ser obtidos conforme as opções adicionadas na chamada do pacote. Os nomes das cores podem ser encontrados na \href{https://ctan.dcc.uchile.cl/macros/latex/contrib/xcolor/xcolor.pdf}{documentação do pacote}.
-        \item Muitas vezes pode ser mais fácil declarar um nova cor baseada no RGB. Um site que dá a numeração pronta: \url{http://latexcolor.com/}.
+        \item Muitas vezes pode ser mais fácil declarar um nova cor baseada no RGB. Um site que dá a numeração pronta: \href{http://latexcolor.com/}{Latex Color}.
         \item Exemplo: \lstinline[style=myStyleLatex]!\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}!
     \end{itemize}
 
@@ -186,19 +147,19 @@
         \item Pode-se utilizar \lstinline[style=myStyleLatex]!\textcolor{<color>}{<text>}! para que somente um bloco de texto fique colorido.
         \item Para um bloco pequeno de texto com destaque de fundo, utiliza-se \lstinline[style=myStyleLatex]!\colorbox{<color>}{<text>}!.
         \item Se for um texto grande, tem chances de que a linha não quebre e dê problema na hora de compilar, para isso é interessante criar uma caixa de texto: \lstinline[style=myStyleLatex]!\colorbox{<color>}{\parbox{<size box>}{<text>}}!. O tamanho pode ser em: mm, cm, in, pt, ex, em, mu, sp.
-    \end{itemize}  
+    \end{itemize}
 
 \end{frame}
 
 \section{Alinhamento}
 \begin{frame}[fragile]
     \frametitle{Ambiente para alinhamento}
-
+    \small
     \begin{itemize}
         \item O alinhamento para o bloco de texto é feito com três ambientes básicos:
-        \begin{lstlisting}[style=myStyleLatex]
+              \begin{lstlisting}[style=myStyleLatex]
     \begin{document}
-    (*\vdots*)
+        (*\vdots*)
     \begin{center}
         (*\vdots*)
     \end{center}
@@ -239,20 +200,17 @@
     \begin{itemize}
         \item Usar o comando \lstinline[style=myStyleLatex]!\setlength{\parindent}{<size>}! para determinar o valor de recuo. O tamanho é pode ser em  mm, cm, in, pt, ex, em, mu, sp.
         \item Para demonstrar que um novo parágrafo vai inicial tem três maneiras:
-        \begin{itemize}
-            \item Uma linha vazia no código.
-            \item Ao final do texto do parágrafo anterior, inserir \lstinline[style=myStyleLatex]!\par! um novo parágrafo como recuo.  
-        \end{itemize}
+              \begin{itemize}
+                  \item Uma linha vazia no código.
+                  \item Ao final do texto do parágrafo anterior, inserir \lstinline[style=myStyleLatex]!\par! um novo parágrafo como recuo.
+              \end{itemize}
         \item Para não ter recuo de primeira linha do documento, usar o comando \lstinline[style=myStyleLatex]!\noindent!.
     \end{itemize}
 \end{frame}
 
-\section{Referências}
 \begin{frame}[allowframebreaks]
     \frametitle{Referências}
     \nocite{*}
     \printbibliography[keyword={editText}]
 \end{frame}
-
-
 \end{document}
