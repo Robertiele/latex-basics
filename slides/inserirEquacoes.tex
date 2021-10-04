@@ -1,0 +1,41 @@
+\documentclass[brazilian]{beamer}
+
+\input{preambulo.tex}
+
+\title{Inserir Equações}
+
+\begin{document}
+    \frame{\titlepage}
+    
+    \begin{frame}
+        \frametitle{Sumário}
+        \tableofcontents
+    \end{frame}
+
+\section{Ambientes}
+\begin{frame}[fragile]
+    \frametitle{Ambientes}
+
+    \begin{table}
+        \caption{Ambientes para equações.}
+        \label{tab:Ambientes}
+        \begin{tabular}{p{4.5cm}cr}
+            Comando & Apresentação & Numerada \\ \hline
+            \lstinline[style=myStyleLatex]!\(...\)! & corpo de texto & não \\ \hline
+            \lstinline[style=myStyleLatex]!$...$! & corpo de texto & não \\ \hline
+            \lstinline[style=myStyleLatex]!\[...\]! & em destaque & não \\ \hline
+            \lstinline[style=myStyleLatex]!\begin{equation}... \end{equation}! & em destaque & sim \\ \hline
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+\subsection{Alinhamento}
+\section{Pacotes}
+\section{Símbolos}
+\section{Delimitadores}
+\section{Operadores}
+\section{Alfabetos}
+\section{Fontes}
+\section{Novos comandos}
+\section{Rótulo}
+\end{document}
