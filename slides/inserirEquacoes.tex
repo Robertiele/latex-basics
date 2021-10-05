@@ -96,7 +96,6 @@
             \(>\) & \lstinline[style=myStyleLatex]!>! \\ \hline
             \(\leq\) & \lstinline[style=myStyleLatex]!\leq! \\ \hline
             \(\geq \) & \lstinline[style=myStyleLatex]!\geq! \\ \hline
-            \(\) & \lstinline[style=myStyleLatex]!! \\ \hline
         \end{tabular}
     \end{table}
 
@@ -217,7 +216,7 @@
     \frametitle{Operadores}
 
     \begin{table}
-        \begin{tabular}{O{1.5cm}l}
+        \begin{tabular}{O{2cm}l}
             Operador & Comando \\ \hline
             \(\arccos \) & \lstinline[style=myStyleLatex]!\arccos ! \\ \hline
             \(\cos \) & \lstinline[style=myStyleLatex]!\cos ! \\ \hline
@@ -254,16 +253,48 @@
 \end{frame}
 \section{Novos comandos}
 \begin{frame}[fragile]
-    \frametitle{Novos comando}
+    \frametitle{Novos Comandos}
 
     \begin{itemize}
         \item Determinadas partes nas equações podem se tornar repetitivas e inconvenientes de serem repetidas. 
         \item Por isso, o \LaTeX oferece um meio de tornar a escrita mais simplificada.
         \item \lstinline[style=myStyleLatex]!\newcommand{<cmd>}[<args>][<def>]{<definition>}!
+        \item Em que o primeiro campo é preenchido pelo nome do comando, não pode ser repetido.
+        \item O segundo campo diz respeito à quantidade de campos o futuro comando irá receber. 
+        \item O terceiro campo serve para estabelecer o padrão do \textbf{primeiro} campo preenchível no pelo futuro comando. Se ele for omitido, significa que nenhum campo é opcional. Se ele for preenchido, ocupa o calor no primeiro campo. 
     \end{itemize}
 
 \end{frame}
+\begin{frame}[fragile]
+    \frametitle{Exemplo}
+\footnotesize
+\begin{lstlisting}[style=myStyleLatex]
+\newcommand{\edp}[3][]{%
+    \ensuremath{%
+        \frac{\partial^{#1}\left[#2\right]}{\partial{#3}^{#1}}
+    }
+}
+\end{lstlisting}
+\lstinline[style=myStyleLatex]!\[\edp[]{3x}{x}\]!
+\[\edp[]{3x}{x}\]
+\lstinline[style=myStyleLatex]!\[\edp[3]{3y^2}{y}\]!
+\[\edp[3]{3y^2}{y}\]
 
+\end{frame}
+
+
+\section{Novos Operadores}
+\begin{frame}[fragile]
+    \frametitle{Novos Operadores}
+
+    \begin{itemize}
+        \item Para novos operadores, precisamos do pacote \texttt{amsmath}, no mínimo.
+    \end{itemize}
+\begin{lstlisting}[style=myStyleLatex]
+\DeclareMathOperator{<cmd>}{<text>}
+\end{lstlisting}    
+
+\end{frame}
 \section{Rótulo}
 
 \begin{frame}{allowframebreaks}

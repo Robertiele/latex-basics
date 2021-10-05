@@ -74,7 +74,7 @@
     keywordstyle = {\color{darkslateblue}},
     keywordstyle = [2]{\color{forestgreen}},
     keywordstyle = [3]{\color{packagecolor}},
-    morekeywords = {maketitle,chapter,part, section, subsection, subsubsection, paragraph, subparagraph,familydefault,rmdefault,sfdefault,ttdefault,textsubscript,ttshape,colorbox,textcolor,definecolor,setlength,includegraphics,listoffigures,listoftables,endfirsthead,endhead,endfoot,endlastfoot,arraybackslash,newcolumntype,rowcolor,rowcolors,cellcolor,multirow,setmainfont,documentclass,mathcal,mathbb,mathfrak,mathscr},
+    morekeywords = {maketitle,chapter,part, section, subsection, subsubsection, paragraph, subparagraph,familydefault,rmdefault,sfdefault,ttdefault,textsubscript,ttshape,colorbox,textcolor,definecolor,setlength,includegraphics,listoffigures,listoftables,endfirsthead,endhead,endfoot,endlastfoot,arraybackslash,newcolumntype,rowcolor,rowcolors,cellcolor,multirow,setmainfont,documentclass,mathcal,mathbb,mathfrak,mathscr,DeclareMathOperator},
     morekeywords = [2]{default,arguments},
     morekeywords = [3]{document,command,definition, ambiente,book,report,article,exam, beamer,flushright,flushleft,center,figure,table,tabular,tabularx,longtable,article,book,exam,wrapfigure,equation,split,align,gather,multiline},
     numbers = left,
@@ -96,3 +96,5 @@
 \institute[CTISM]{Colégio Técnico Industrial de Santa Maria}
 \logo{\includegraphics[width=1cm]{../images/photo1.jpg}}
 \date{\today}
+
+\newcommand{\edp}[3][]{\ensuremath{\frac{\partial^{#1}\left[#2\right]}{\partial{#3}^{#1}}}}
