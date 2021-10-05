@@ -12,7 +12,7 @@ Repositório criado para manter arquivos com dicas básicas para utilização do
 - [x] Edição de texto.
 - [x] Inserir imagens.
 - [x] Inserir tabelas.
-- [ ] Inserir equações.
+- [x] Inserir equações.
 - [ ] Inserir códigos.
 - [ ] Incluir anexos.
 - [ ] Citação e referências na ABNT.
