@@ -7,7 +7,7 @@
 \apptocmd{\frame}{}{\justifying}{}
 
 \usepackage{caption}
-\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage{hyperref}
 \hypersetup{
     final=true,
     unicode=true,
@@ -24,6 +24,7 @@
     filecolor=cyan,
     urlcolor=magenta
 }
+\usepackage[nameinlink,capitalise]{cleveref}
 \usepackage[style=abnt]{biblatex}
 \addbibresource{references.bib}
 \usepackage{csquotes}
@@ -32,10 +33,11 @@
 \usepackage{array}
 \newcolumntype{M}[1]{>{\raggedleft\arraybackslash}m{#1}}
 \newcolumntype{O}[1]{>{\raggedright\arraybackslash}m{#1}}
-
 \usepackage{multirow}
+
 \usepackage{graphicx}
 \usepackage{svg}
+
 \usepackage{multicol}
 \usepackage{fontspec}
 \setsansfont{Syne}
@@ -71,10 +73,10 @@
     firstnumber = 1,
     frame = none,
     keepspaces = true,
-    keywordstyle = {\color{darkslateblue}},
+    keywordstyle = {\bfseries\color{darkslateblue}},
     keywordstyle = [2]{\color{forestgreen}},
-    keywordstyle = [3]{\color{packagecolor}},
-    morekeywords = {maketitle,chapter,part, section, subsection, subsubsection, paragraph, subparagraph,familydefault,rmdefault,sfdefault,ttdefault,textsubscript,ttshape,colorbox,textcolor,definecolor,setlength,includegraphics,listoffigures,listoftables,endfirsthead,endhead,endfoot,endlastfoot,arraybackslash,newcolumntype,rowcolor,rowcolors,cellcolor,multirow,setmainfont,documentclass,mathcal,mathbb,mathfrak,mathscr,DeclareMathOperator,cref,autoref},
+    keywordstyle = [3]{\itshape\color{packagecolor}},
+    morekeywords = {maketitle,chapter,part, section, subsection, subsubsection, paragraph, subparagraph,familydefault,rmdefault,sfdefault,ttdefault,textsubscript,ttshape,colorbox,textcolor,definecolor,setlength,includegraphics,listoffigures,listoftables,endfirsthead,endhead,endfoot,endlastfoot,arraybackslash,newcolumntype,rowcolor,rowcolors,cellcolor,multirow,setmainfont,documentclass,mathcal,mathbb,mathfrak,mathscr,DeclareMathOperator,cref,autoref,lstdefinestyle,lstset},
     morekeywords = [2]{default,arguments},
     morekeywords = [3]{document,command,definition, ambiente,book,report,article,exam, beamer,flushright,flushleft,center,figure,table,tabular,tabularx,longtable,article,book,exam,wrapfigure,equation,split,align,gather,multiline},
     numbers = left,

@@ -12,5 +12,53 @@
     \frametitle{Sumário}
     \tableofcontents
 \end{frame}
+\section{Introdução }
+
+\begin{frame}
+    \frametitle{Introdução}
+Inserir um código em um documento técnico é uma etapa muito comum, obter sucesso na formatação de espaços e cores adequadas pode ser bem complexo e trabalhoso. 
+\end{frame}
+
+\section{Pacote}
+\begin{frame}
+    \frametitle{Listings}
+Para esse tópico, o \LaTeX oferece um ambiente dedicado à inclusão de código em diversas linguagens de programação. E o pacote que usaremos para deixar esse ambiente mais bonito é o \texttt{listings}. Com ele podemos importar o código de um outro arquivo, importar somente uma parte do código, estabelecer o padrão de numeração, editar as cores e o tipo de fonte para os comandos, etc.
+\end{frame}
+
+\section{Configuração}
+\begin{frame}[fragile]
+    \frametitle{Configuração}
+
+    \begin{itemize}
+        \item O \texttt{listings} possui dois ``níveis de configuração''.
+        \item O nível mais geral é chamado pelo comando \lstinline[style=myStyleLatex]!\lstset{...}!, no qual ocorre a configuração do ambiente de uma maneira geral: fonte, bordas, fundo, número de linhas, etc.
+        \item O nível mais específico é chamado de \lstinline[style=myStyleLatex]!\lstdefinestyle{...}!, em que consta as configurações específicas da linguagem.
+        \item É útil 
+    \end{itemize}
+
+\end{frame}
+
+\subsection{Configuração geral}
+\begin{frame}[fragile]
+    \frametitle{Configuração geral}
+
+    
+
+\end{frame}
+\subsection{Configuração linguagem}
+
+\section{Inclusão de código}
+
+\section{Inclusão de documento}
+
+\section{Legendas e Rótulos}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Referências}
+
+    \nocite{*}
+    \printbibliography[keyword={inserirCodigo}]
+
+\end{frame}
 
 \end{document}
