@@ -293,13 +293,27 @@
 \begin{lstlisting}[style=myStyleLatex]
 \DeclareMathOperator{<cmd>}{<text>}
 \end{lstlisting}    
+\end{frame}
+
+
+\section{Rótulo e Referência Cruzada}
+\begin{frame}[fragile]
+    \frametitle{Rótulo e Referência Cruzada}
+
+    \begin{itemize}
+        \item Pode-se referenciar as equações. Para isso, coloca-se um rótulo na equação através do comando \lstinline[style=myStyleLatex]!\label{eq:<text>}!
+        \item Para chamar a equação, normalmente precisa compilar duas vezes. 
+        \item Usar o comando \lstinline[style=myStyleLatex]!\eqref{eq:>{<text>}}!. 
+        \item Com o pacote \texttt{hyperref}, pode se usar o \lstinline[style=myStyleLatex]!\autoref{eq:>{<text>}}!.
+        \item Com o pacote \texttt{cleveref}, pode se usar o \lstinline[style=myStyleLatex]!\cref{eq:>{<text>}}!.
+    \end{itemize}
 
 \end{frame}
-\section{Rótulo}
+
 
 \begin{frame}{allowframebreaks}
     \frametitle{Referências}
     \nocite{*}
-    \printbibliography[keyword={inserirEquacao}]
+    \printbibliography[keyword={inserirEquacoes}]
 \end{frame}
 \end{document}

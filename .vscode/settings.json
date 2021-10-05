@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
         "amsfonts",
+        "amssymb",
         "arraybackslash",
+        "autoref",
         "backgroundcolor",
         "basicstyle",
         "breakatwhitespace",
@@ -37,7 +39,10 @@
         "linkcolor",
         "listoffigures",
         "listoftables",
+        "mathbb",
+        "mathfrak",
         "mathrsfs",
+        "mathscr",
         "mathtools",
         "multirow",
         "mygray",
