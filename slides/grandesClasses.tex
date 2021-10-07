@@ -19,9 +19,9 @@
     
     \begin{itemize}
         \item São modelos de documentos. Elas determinam as grandes configurações, comandos e apresentações do arquivo.
-        \item Pode ser que uma classe padrão não apresente o conteúdo da maneira esperada, deste modo, pode-se criar uma classe e carregar ela junto com o documento \lstinline[]!.tex!.
-        \item A classe possui o formato \lstinline[]!.cls!.
-        \item Sempre que uma classe for criada para uma finalidade, é importante manter junto com o arquivo \lstinline[]!.tex!.
+        \item Pode ser que uma classe padrão não apresente o conteúdo da maneira esperada, deste modo, pode-se criar uma classe e carregar ela junto com o documento \lstinline[style=myStyleLatex]!.tex!.
+        \item A classe possui o formato \lstinline[style=myStyleLatex]!.cls!.
+        \item Sempre que uma classe for criada para uma finalidade, é importante manter junto com o arquivo \lstinline[style=myStyleLatex]!.tex!.
         \item Como escrever uma classe do zero é uma tarefa difícil, há classes padrões que atendem muito bem as necessidades do usuário.
     \end{itemize}
     
@@ -29,7 +29,7 @@
 
 \begin{frame}[fragile]
     \frametitle{Classes que podem ser as mais úteis}
-    \begin{lstlisting}
+    \begin{lstlisting}[style=myStyleLatex]
     \documentclass[<options>]{<class>}
 \end{lstlisting}
     \begin{tabularx}{\textwidth}{rX}
