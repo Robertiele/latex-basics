@@ -33,19 +33,24 @@ Para esse tópico, o \LaTeX oferece um ambiente dedicado à inclusão de código
         \item O \texttt{listings} possui dois ``níveis de configuração''.
         \item O nível mais geral é chamado pelo comando \lstinline[style=myStyleLatex]!\lstset{...}!, no qual ocorre a configuração do ambiente de uma maneira geral: fonte, bordas, fundo, número de linhas, etc.
         \item O nível mais específico é chamado de \lstinline[style=myStyleLatex]!\lstdefinestyle{...}!, em que consta as configurações específicas da linguagem.
-        \item É útil 
+        \item Se haverá somente uma linguagem de programação, não há necessidade de configurar o estilo.
     \end{itemize}
 
 \end{frame}
 
-\subsection{Configuração geral}
 \begin{frame}[fragile]
-    \frametitle{Configuração geral}
-
-    
+    \frametitle{Configuração}
+\tiny
+    \begin{table}
+        \begin{tabular}{rcl}
+            Opção & Preenchimento & Explicação \\ \hline
+            \texttt{backgroundcolor} & \lstinline[style=myStyleLatex]!\color{name}! & Cor de fundo para o ambiente \\ \hline
+            \texttt{basicstyle} & - & É o padrão da escrita básica vai obedecer: tamanho, fonte, etc.  \\ \hline
+            \texttt{u} & \texttt{\bfseries u} \texttt{7} & gg \\ \hline
+        \end{tabular}
+    \end{table}
 
 \end{frame}
-\subsection{Configuração linguagem}
 
 \section{Inclusão de código}
 
