@@ -6,23 +6,21 @@
 \usepackage{ragged2e}
 \apptocmd{\frame}{}{\justifying}{}
 
+\usepackage{xcolor}
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+
 \usepackage{caption}
 \usepackage{hyperref}
 \hypersetup{
-    final=true,
     unicode=true,
-    pdftoolbar=true,
-    pdfmenubar=true,
-    pdffitwindow=true,
-    pdfstartview={FitW},
+    pdfstartview={FitH},
     pdfauthor={Nightwind},
     pdfkeywords={latex, dicas},
-    pdfnewwindow=true,
-    colorlinks=false,
-    linkcolor=red,
+    colorlinks=true,
+    linkcolor=black,
     citecolor=green,
     filecolor=cyan,
-    urlcolor=magenta
+    urlcolor=magenta,
     implicit=true
 }
 \usepackage[nameinlink,capitalise]{cleveref}
@@ -47,8 +45,9 @@
 
 \usepackage{mathtools}
 \usepackage{mathrsfs}
-
-\usepackage{xcolor}
+\usepackage{xfrac}
+\DeclareMathOperator{\sen}{sen}
+\newcommand{\intd}[4]{\ensuremath{\int_{#1}^{#2}\left[ #3 \right] \, \mathsf{d} {#4}}}
 
 \usepackage{listings}
 \definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
@@ -77,7 +76,7 @@
     keywordstyle = {\bfseries\color{darkslateblue}},
     keywordstyle = [2]{\color{forestgreen}},
     keywordstyle = [3]{\itshape\color{packagecolor}},
-    morekeywords = {maketitle,chapter,part, section, subsection, subsubsection, paragraph, subparagraph,familydefault,rmdefault,sfdefault,ttdefault,textsubscript,ttshape,colorbox,textcolor,definecolor,setlength,includegraphics,listoffigures,listoftables,endfirsthead,endhead,endfoot,endlastfoot,arraybackslash,newcolumntype,rowcolor,rowcolors,cellcolor,multirow,setmainfont,documentclass,mathcal,mathbb,mathfrak,mathscr,DeclareMathOperator,cref,autoref,lstdefinestyle,lstset},
+    morekeywords = {maketitle,chapter,part, section, subsection, subsubsection, paragraph, subparagraph,familydefault,rmdefault,sfdefault,ttdefault,textsubscript,ttshape,colorbox,textcolor,definecolor,setlength,includegraphics,listoffigures,listoftables,endfirsthead,endhead,endfoot,endlastfoot,arraybackslash,newcolumntype,rowcolor,rowcolors,cellcolor,multirow,setmainfont,documentclass,mathcal,mathbb,mathfrak,mathscr,DeclareMathOperator,cref,autoref,lstdefinestyle,lstset,dfrac,sfrac},
     morekeywords = [2]{default,arguments},
     morekeywords = [3]{document,command,definition, ambiente,book,report,article,exam, beamer,flushright,flushleft,center,figure,table,tabular,tabularx,longtable,article,book,exam,wrapfigure,equation,split,align,gather,multiline},
     numbers = left,

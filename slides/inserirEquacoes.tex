@@ -294,9 +294,119 @@
     \end{itemize}
 \begin{lstlisting}[style=myStyleLatex]
 \DeclareMathOperator{<cmd>}{<text>}
-\end{lstlisting}    
+\end{lstlisting}
+
+Exemplo: 
+\begin{lstlisting}[style=myStyleLatex]
+\DeclareMathOperator{\sen}{sen}
+\end{lstlisting}
+
+Resultado: \[\sen\theta\]
+
+
 \end{frame}
 
+\section{Construções Matemáticas}
+\subsection{Frações}
+\begin{frame}[fragile]
+    \frametitle{Frações}
+\small
+Para fazer uma fração, basta chamar o comando:
+\begin{lstlisting}[style=myStyleLatex]
+\frac{<numerador>}{<denominador>}
+\end{lstlisting}
+Exemplo: \[\frac{3}{4}.\]
+Nos ambientes que em linhas de texto, a fração vai ficar menor para caber na linha. Exemplo: \(\frac{3}{4}\). Caso o intuito seja deixar ela grande, usar o comando:
+\begin{lstlisting}[style=myStyleLatex]
+\dfrac{<numerador>}{<denominador>}
+\end{lstlisting}
+Exemplo: \(\dfrac{3}{4}\).
+
+Para fazer uma fração inclinada, chamar o pacote \texttt{xfrac} e usar o comando:
+\begin{lstlisting}[style=myStyleLatex]
+\sfrac{<numerador>}{<denominador>}
+\end{lstlisting}
+Exemplo: \(\sfrac{3}{4}\).
+
+\end{frame}
+
+\subsection{Limites}
+\begin{frame}[fragile]
+    \frametitle{Limites}
+
+Para o comando de limite, usar:
+\begin{lstlisting}[style=myStyleLatex]
+\lim_{x \to \infty} 
+\end{lstlisting}
+Exemplo: \[\lim_{x \to \infty} x \]
+
+\end{frame}
+
+\subsection{Somatórios}
+
+\begin{frame}[fragile]
+    \frametitle{Somatórios}
+
+Para o comando de limite, usar:
+\begin{lstlisting}[style=myStyleLatex]
+\sum_{n = 1}^{\infty} 
+\end{lstlisting}
+Exemplo: \[\sum_{n = 1}^{\infty} x \]
+
+\end{frame}
+
+\subsection{Raízes}
+\begin{frame}[fragile]
+    \frametitle{Raízes}
+
+A raiz é um comando formado por um campo opcional e um campo obrigatório. No campo opcional é colocado o índice. E no campo obrigatório é colocado o radicando. 
+\begin{lstlisting}[style=myStyleLatex]
+\sqrt[<indice>]{<radicando>}
+\end{lstlisting}
+Exemplo: \[\sqrt{9}\]\[\sqrt[3]{8}\]
+
+\end{frame}
+
+\subsection{Integrais}
+\begin{frame}[fragile]
+    \frametitle{Integrais}
+
+A integral é representada pelo comando
+\begin{lstlisting}[style=myStyleLatex]
+\int_{a}^{b} 
+\end{lstlisting}
+Uma sugestão de complemento seria
+\begin{lstlisting}[style=myStyleLatex]
+\int_{a}^{b} \left[ x \right] \mathsf{d} x 
+\end{lstlisting}
+Resultado: \[\int_{a}^{b} \left[ x \right] \mathsf{d} x \]
+Pode-se fazer um novo comando para a integral:
+\begin{lstlisting}[style=myStyleLatex,]
+\newcommand{\intd}[4]{\ensuremath{\int_{#1}^{#2} % 
+    \left[ #3 \right] \, \mathsf{d} {#4}}}     
+\end{lstlisting}
+\[\intd{a}{b}{x}{x}\]
+\end{frame}
+
+\subsection{Derivadas}
+\begin{frame}[fragile]
+    \frametitle{Derivadas}
+    Para demonstrar uma derivada, podemos usar:
+    \tiny
+    \renewcommand{\arraystretch}{3}
+\begin{table}[h]
+    \begin{tabular}{rl}
+        Comando & Resultado \\ \hline
+        \lstinline[style=myStyleLatex]! \frac{\mathsf{d}f(t)}{\mathsf{d}t} ! & \(\dfrac{\mathsf{d}f(t)}{\mathsf{d}t}\) \\ \hline
+        \lstinline[style=myStyleLatex]! \frac{\mathsf{d}}{\mathsf{d}x}\left[\frac{g(x)}{h(x)}\right] ! & \(\dfrac{\mathsf{d}}{\mathsf{d}x}\left[ \dfrac{g(x)}{h(x)} \right]\) \\ \hline
+        \lstinline[style=myStyleLatex]! \frac{\mathsf{d}^4f(t)}{\mathsf{d}t^4} ! & \(\dfrac{\mathsf{d}^4f(t)}{\mathsf{d}t^4}\) \\ \hline
+        \lstinline[style=myStyleLatex]! \frac{\partial f(t)}{\partial t} ! & \(\dfrac{\partial f(t)}{\partial t}\) \\ \hline
+        \lstinline[style=myStyleLatex]! \frac{\partial}{\partial x}\left[\frac{g(x)}{h(x)}\right] ! & \(\dfrac{\partial}{\partial x}\left[ \dfrac{g(x)}{h(x)} \right]\) \\ \hline
+        \lstinline[style=myStyleLatex]! \frac{\partial^4f(t)}{\partial t^4} ! & \(\dfrac{\partial^4f(t)}{\partial t^4}\) \\ \hline
+    \end{tabular}
+\end{table}
+
+\end{frame}
 
 \section{Rótulo e Referência Cruzada}
 \begin{frame}[fragile]
@@ -306,8 +416,8 @@
         \item Pode-se referenciar as equações. Para isso, coloca-se um rótulo na equação através do comando \lstinline[style=myStyleLatex]!\label{eq:<text>}!
         \item Para chamar a equação, normalmente precisa compilar duas vezes. 
         \item Usar o comando \lstinline[style=myStyleLatex]!\eqref{eq:>{<text>}}!. 
-        \item Com o pacote \texttt{hyperref}, pode se usar o \lstinline[style=myStyleLatex]!\autoref{eq:>{<text>}}!.
-        \item Com o pacote \texttt{cleveref}, pode se usar o \lstinline[style=myStyleLatex]!\cref{eq:>{<text>}}!.
+        \item Com o pacote \texttt{hyperref}, pode se usar o \lstinline[style=myStyleLatex]!\autoref{eq:<text>}!.
+        \item Com o pacote \texttt{cleveref}, pode se usar o \lstinline[style=myStyleLatex]!\cref{eq:<text>}!.
     \end{itemize}
 
 \end{frame}
