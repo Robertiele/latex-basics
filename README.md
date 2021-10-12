@@ -13,6 +13,6 @@ Repositório criado para manter arquivos com dicas básicas para utilização do
 - [x] Inserir imagens.
 - [x] Inserir tabelas.
 - [x] Inserir equações.
-- [ ] Inserir códigos.
+- [x] Inserir códigos.
 - [ ] Incluir anexos.
 - [ ] Citação e referências na ABNT.
