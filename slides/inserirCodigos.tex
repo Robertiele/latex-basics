@@ -60,15 +60,32 @@ Para esse tópico, o \LaTeX oferece um ambiente dedicado à inclusão de código
             \texttt{morekeywords} & {..., } & Palavras reservadas pela linguagem, que não foram reconhecidas \\ \hline
             \texttt{numbers} & \texttt{\bfseries none}, \texttt{left}, \texttt{right} & Alinhamento dos números \\ \hline
             \texttt{numbersep} & \texttt{\bfseries 10pt} & Distância entre o número de linha e o código \\ \hline
-            \texttt{numberstyle} & -
+            \texttt{numberstyle} & - & Padrão do número: tamanho, fonte, etc. \\ \hline
+            \texttt{rulecolor} & \lstinline[style=myStyleLatex]!\color{name}! & Cor da borda do ambiente \\ \hline
         \end{tabular}
     \end{table}
 
 \end{frame}
 
-\section{Inclusão de código}
+\begin{frame}[fragile]
+    \frametitle{Configuração}
+\tiny
+    \begin{table}
+        \begin{tabular}{rC{2cm}O{6cm}}
+            Opção & Preenchimento & Explicação \\ \hline
+            \texttt{showspaces} & \texttt{\bfseries false}, \texttt{true} & Indicador de espaços em todo o código \\ \hline
+            \texttt{showstringspaces} & \texttt{\bfseries true}, \texttt{false} & Indicador de espaços somente nas \textit{strings} \\ \hline
+            \texttt{showtabs} & \texttt{\bfseries false}, \texttt{true} & Indicador de \keys{\tab} em todo o código \\ \hline
+            \texttt{stepnumber} & \texttt{\bfseries 1}, \ldots & Passo de exibição do número de linhas \\ \hline
+            \texttt{stringstyle} & - & Padrão da string: tamanho, fonte, etc. \\ \hline
+            \texttt{tabsize} & \texttt{\bfseries 8}, \ldots & Espaços utilizados para representar o \keys{\tab} \\ \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
 
-\section{Inclusão de documento}
+\section{Inclusão de código}
+\subsection{Código no texto}
+\subsection{Código de arquivo}
 
 \section{Legendas e Rótulos}
 
