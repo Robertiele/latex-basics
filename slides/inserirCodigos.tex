@@ -42,10 +42,10 @@ Para esse tópico, o \LaTeX oferece um ambiente dedicado à inclusão de código
     \frametitle{Configuração}
 \tiny
     \begin{table}
-        \begin{tabular}{rcl}
+        \begin{tabular}{rC{2cm}O{6cm}}
             Opção & Preenchimento & Explicação \\ \hline
-            \texttt{backgroundcolor} & \lstinline[style=myStyleLatex]!\color{name}! & Cor de fundo para o ambiente \\ \hline
-            \texttt{basicstyle} & - & Padrão da escrita básica vai obedecer: tamanho, fonte, etc.  \\ \hline
+            \texttt{backgroundcolor} & \lstinline[style=myStyleLatex]!\color{name}! & Cor de fundo para o ambiente (usar \texttt{xcolor}) \\ \hline
+            \texttt{basicstyle} & - & Padrão da escrita básica: tamanho, fonte, etc.  \\ \hline
             \texttt{breaklines} & \texttt{\bfseries false}, \texttt{true} & Quebra de linha automática \\ \hline
             \texttt{captionpos} & \texttt{\bfseries t}, \texttt{b} & Posição da legenda \\ \hline
             \texttt{commentstyle} & - & Padrão do comentário \\ \hline 
@@ -54,6 +54,13 @@ Para esse tópico, o \LaTeX oferece um ambiente dedicado à inclusão de código
             \texttt{extendedchars} & \texttt{\bfseries true}, \texttt{false} & Permite usar caracteres não-ASCII  \\ \hline
             \texttt{firstnumber} & 1-9999 & Posição da legenda \\ \hline
             \texttt{frame} & \texttt{\bfseries none}, \texttt{leftline}, \texttt{topline}, \texttt{bottomline}, \texttt{lines}, \texttt{single}, \texttt{shadowbox}  & Borda do ambiente \\ \hline
+            \texttt{keepspaces} & \texttt{\bfseries false}, \texttt{true} & Mantém espaços e tabulações do ambiente \\ \hline
+            \texttt{keywordstyle} & \texttt{\bfseries false}, \texttt{true} & Padrão das palavras reservadas: tamanho, fonte, etc.  \\ \hline
+            \texttt{language} & - & Linguagem utilizada no ambiente ou no estilo (consultar o \href{https://ctan.dcc.uchile.cl/macros/latex/contrib/listings/listings.pdf}{\texttt{pacote do listings}}) \\ \hline
+            \texttt{morekeywords} & {..., } & Palavras reservadas pela linguagem, que não foram reconhecidas \\ \hline
+            \texttt{numbers} & \texttt{\bfseries none}, \texttt{left}, \texttt{right} & Alinhamento dos números \\ \hline
+            \texttt{numbersep} & \texttt{\bfseries 10pt} & Distância entre o número de linha e o código \\ \hline
+            \texttt{numberstyle} & -
         \end{tabular}
     \end{table}
 
