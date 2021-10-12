@@ -1,0 +1,54 @@
+\documentclass[brazilian]{beamer}
+
+\input{preambulo.tex}
+
+\title{Inserir Anexos}
+
+\begin{document}
+    \frame{\titlepage}
+
+    \begin{frame}
+        \frametitle{Sumário}
+        \tableofcontents
+    \end{frame}
+
+\section{Pacote}
+\begin{frame}[fragile]
+    \frametitle{Pacote}
+
+    \begin{itemize}
+        \item Para carregar um PDF dentro de um documento \LaTeX, utiliza-se o pacote: \texttt{pdfpages}. 
+    \end{itemize}
+
+\begin{lstlisting}[style=myStyleLatex]
+\usepackage{pdfpages}
+\end{lstlisting}
+\end{frame}
+
+\section{Sintaxe}
+\begin{frame}[fragile]
+    \frametitle{Sintaxe}
+
+Para inserir o PDF em si, usar o comando:
+
+\begin{lstlisting}[style=myStyleLatex,numbers=none]
+    \includepdf[<opt>]{<file>}
+\end{lstlisting}
+As opções podem ser:
+
+\begin{itemize}
+    \item \texttt{pages=\{x-y,z\}}: intervalo de páginas ou páginas individuais.
+    \item \texttt{landscape}: se as paginas inseridas forem na horizontal.
+\end{itemize}
+
+\end{frame}
+
+
+    \begin{frame}[allowframebreaks]
+        \frametitle{Referências}
+    
+        \nocite{*}
+        \printbibliography[keyword={inserirPDF}]
+    
+    \end{frame}
+\end{document}
