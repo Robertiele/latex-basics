@@ -98,17 +98,32 @@ Para esse tópico, o \LaTeX oferece um ambiente dedicado à inclusão de código
 \begin{frame}[fragile]
     \frametitle{Inclusão de código}
 
+Há três formas básicas de incluir códigos no texto: 
+
+Quando o código é dentro do texto, utilizar o comando 
+\begin{lstlisting}[style=myStyleLatex, numbers=none]
+    \lstinline[<opt>]!<cod>!
+\end{lstlisting}
+Quando é um bloco de código copiado, pode-se utilizar o comando:
+
+\lstinline[style=myStyleLatex,]!\begin{lstlisting}[<opt>]<cod>\end{lstlisting}!
+
+Quando o intuito foi chamar o código do arquivo, utilizar:
+\begin{lstlisting}[style=myStyleLatex, numbers=none]
+    \lstinputlisting[<opt>]{<file>}
+\end{lstlisting}
+\end{frame}
+
+\section{Legenda e Rótulo}
+\begin{frame}[fragile]
+    \frametitle{Legenda e Rótulo}
+
     \begin{itemize}
-        \item Há três formas básicas de incluir códigos no texto. 
-        \item Quando o código é dentro do texto, utilizar o comando \lstinline[style=myStyleLatex]! \lstinline[<opt>]!\texttt{!<cod>!}
+        \item Para adicionar a legenda, basta utilizar a opção \texttt{caption=\{<legenda>\}}. A posição da legenda é determinada pela opção \texttt{captionpos=\{<pos>\}}, e pode ser \texttt{b} para que a legenda fique abaixo ou \texttt{t} para que a legenda fique acima.
+        \item  Para adicionar o rótulo para posterior referência cruzada, utilizar a opção \texttt{label=\{lst:<rotulo>\}}.
     \end{itemize}
 
 \end{frame}
-
-\subsection{Código no texto}
-\subsection{Código de arquivo}
-
-\section{Legendas e Rótulos}
 
 \begin{frame}[allowframebreaks]
     \frametitle{Referências}
