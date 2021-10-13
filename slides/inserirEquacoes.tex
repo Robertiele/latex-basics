@@ -7,7 +7,7 @@
 \begin{document}
     \frame{\titlepage}
     
-    \begin{frame}
+    \begin{frame}[allowframebreaks]
         \frametitle{Sumário}
         \tableofcontents
     \end{frame}
@@ -59,7 +59,7 @@
             \item \lstinline[style=myStyleLatex]!\begin{split}...\end{split}!: só pode ser chamado dentro do ambiente \texttt{equation}. Ele possui um nível obrigatório de alinhamento. E infinitas linhas. Toda a equação será numerada uma única vez.
             \item \lstinline[style=myStyleLatex]!\begin{align}...\end{align}!: substitui o ambiente \texttt{equation}. Possui infinitos níveis de alinhamento. Cada linha da equação é numerada individualmente, consequentemente, cada linha pode ser referenciada através do comando \texttt{label}.
             \item \lstinline[style=myStyleLatex]!\begin{gather}...\end{gather}!: substitui o ambiente \texttt{equation}. Centraliza todas as equações citadas no ambiente. Não possui nenhum nível de alinhamento. Cada linha da equação é numerada individualmente, consequentemente, cada linha pode ser referenciada através do comando \texttt{label}.
-            \item \lstinline[style=myStyleLatex]!\begin{multiline}...\end{multiline}!: substitui o ambiente \texttt{equation}. Permite a quebra de linha, fazendo com que a equação ocupe duas linhas, mas não dê a impressão que é mais de uma equação. 
+            \item \lstinline[style=myStyleLatex]!\begin{multiline}...\end{multiline}!: substitui o ambiente \texttt{equation}. Permite a quebra de linha em uma equação com muitos termos.
         \end{itemize} 
         \item Em todos os ambiente acima descritos (exceto \texttt{split}) é só adicionar um * depois do comando, por exemplo, \texttt{align*}, \texttt{gather*}, \texttt{multiline*}, para que a numeração seja desconsiderada e não exibida. Portanto, não se pode referenciar esse tipo de ambiente porque não tem contador.  
     \end{itemize}
@@ -263,7 +263,7 @@
         \item \lstinline[style=myStyleLatex]!\newcommand{<cmd>}[<args>][<def>]{<definition>}!
         \item Em que o primeiro campo é preenchido pelo nome do comando, não pode ser repetido.
         \item O segundo campo diz respeito à quantidade de campos o futuro comando irá receber. 
-        \item O terceiro campo serve para estabelecer o padrão do \textbf{primeiro} campo preenchível no pelo futuro comando. Se ele for omitido, significa que nenhum campo é opcional. Se ele for preenchido, ocupa o calor no primeiro campo. 
+        \item O terceiro campo serve para estabelecer o padrão do \textbf{primeiro} campo preenchível pelo futuro comando. Se ele for omitido, significa que nenhum campo é opcional. Se ele for preenchido, ocupa o Valor no primeiro campo. 
     \end{itemize}
 
 \end{frame}
