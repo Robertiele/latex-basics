@@ -18,7 +18,10 @@
 
     \begin{itemize}
         \item As referências são as partes mais cruciais da escrita científica. Elas garantem a credibilidade e o conhecimento sobre o assunto. 
-        \item Elas são compostas por uma se
+        \item Normalmente, por mais que a cobrança de referenciação seja recorrente, a formatação varia de acordo com a instituição ou revista que receberá o material.
+        \item Essa formatação é complexa de se fazer manualmente: cada origem de referência possui um padrão e cada instituição cobra um padrão diferente.
+        \item Para o \LaTeX, esse é um ponto que apresenta maior facilidade do que nos editores de texto normais.
+        \item Insere-se a referência no formato \texttt{.bib}, após a primeira compilação, pode citar através de um comando simples com o rótulo da referência e, onde se desejar exibir a listagem de referências é só adicionar outro comando.
     \end{itemize}
 
 \end{frame}
@@ -27,7 +30,11 @@
 \begin{frame}[fragile]
     \frametitle{Pacote}
 
-    
+    \begin{itemize}
+        \item O pacote sugerido é o \texttt{biblatex}. Ele vai garantir que o estilo abnt seja utilizado. 
+        \item \textbf{Atentar para a versão de ABNT requerida e a versão disponível.}
+        \item É recomendável utilizar o pacote \texttt{babel} para o suporte às diferentes linguagens. E o pacote \texttt{csquotes} de acordo com a linguagens (adaptada pelo \texttt{babel}) ajusta melhor as demarcações de citações de aspas, por exemplo.
+    \end{itemize}
 
 \end{frame}
 
@@ -45,5 +52,14 @@
 \section{Citação}
 
 \section{Referências}
+
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Referências}
+
+    \nocite{*}
+    \printbibliography[keyword=inserirReferencias]
+
+\end{frame}
 
 \end{document}
