@@ -42,16 +42,94 @@
 \begin{frame}[fragile]
     \frametitle{Opções}
 
-    
+    As opções de para configuração do pacote são:
+    \begin{itemize}
+        \item \texttt{style}: \texttt{numeric}, \texttt{alphabetic}, \ldots, \texttt{\bfseries abnt}.
+        \item \texttt{backend}: considerando que termos acentos e cedilha, sugiro usar o \texttt{biber}.
+        \item Acessar o manual para mais opções: \citeurl{biblatexPackage}.
+    \end{itemize}
 
 \end{frame}
 
 \section{Arquivo de Bibliografia}
+\begin{frame}[fragile,allowframebreaks]
+    \frametitle{Arquivo de Bibliografia}
+
+    \begin{itemize}
+        \item O arquivo de bibliografia possui uma extensão diferente. Ele é \texttt{.bib}
+        \item A formatação dele também é diferente. Exemplo:
+    \end{itemize}
+\begin{lstlisting}[style=myStyleLatex]
+@article{<nome>,
+    title={},
+    author={},
+    journal={},
+    volume={},
+    number={},
+    pages={},
+    year={},
+    publisher={}
+}
+
+@book{<nome>,
+    author = {},
+    year = {},
+    title = {},
+    publisher = {},
+    address = {},
+    edition = {}
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Arquivo de Bibliografia}
+
+    \begin{itemize}
+        \item Para conectar o arquivo de referências ao arquivo \texttt{.tex}, colocar no preâmbulo o seguinte comando:
+    \end{itemize}
+\begin{lstlisting}[style=myStyleLatex]
+\addbibresource{<file.bib>}
+\end{lstlisting}
+
+    Pode-se adicionar mais de um documento, chamando o código inteiro novamente. Atentar para não ter duas entradas com o mesmo nome.
+
+\end{frame}
 
 
 \section{Citação}
+\begin{frame}[fragile]
+    \frametitle{Citar um Referência}
+
+    Para citar uma referência, recomenda-se que o arquivo \texttt{bib} esteja salvo e que o arquivo já tenha passado por, no mínimo, uma compilação. Desse modo, os comandos abaixo reconhece a lista dos indicadores. 
+
+\begin{lstlisting}[style=myStyleLatex]
+\cite[<info>]{<nome>}
+\cites[<info>]{<nome>}[<info>]{<nome>}
+\textcite[<info>]{<nome>}
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Não citar Referência}
+
+    \begin{itemize}
+        \item Usar o comando \lstinline[style=myStyleLatex]!\nocite{}!, nele pode ter um asterisco para chamar todas as entradas do arquivo \texttt{bib}. Ou todas as entradas que se objetiva demonstrar no documento, mas que não se faz a citação direta ou indireta.
+    \end{itemize}
+
+\end{frame}
 
 \section{Referências}
+
+\begin{frame}[fragile]
+    \frametitle{Referências}
+
+    \begin{itemize}
+        \item Para apresentar as referências. Usar o comando \lstinline[style=myStyleLatex]!\printbibliography!
+    \end{itemize}
+
+\end{frame}
 
 
 \begin{frame}[allowframebreaks]
